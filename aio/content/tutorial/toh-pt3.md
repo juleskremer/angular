@@ -93,11 +93,55 @@ The `hero` property is the only thing in the `HeroDetailComponent` class. All it
 
 Here's the complete `HeroDetailComponent`.
 
+<<<<<<< HEAD
 <code-example path="toh-pt3/src/app/hero-detail/hero-detail.component.ts" title="src/app/hero-detail/hero-detail.component.ts">
+=======
+<code-example path="toh-pt3/src/app/hero-detail.component.ts" title="src/app/hero-detail.component.ts">
 
 </code-example>
 
 
+
+
+## Declare _HeroDetailComponent_ in the _AppModule_
+Every component must be declared in one&mdash;and only one&mdash;NgModule.
+
+Open `app.module.ts` in your editor and import the `HeroDetailComponent` so you can refer to it.
+
+<code-example path="toh-pt3/src/app/app.module.ts" region="hero-detail-import" title="src/app/app.module.ts">
+
+</code-example>
+
+
+
+Add `HeroDetailComponent` to the module's `declarations` array.
+
+
+<code-example path="toh-pt3/src/app/app.module.ts" region="declarations" title="src/app/app.module.ts" linenums="false">
+>>>>>>> docs(aio): change Angular Module to NgModule (#16964)
+
+</code-example>
+
+
+<<<<<<< HEAD
+=======
+
+In general, the `declarations` array contains a list of application components, pipes, and directives that belong to the module.
+A component must be declared in a module before other components can reference it.
+This module declares only the two application components, `AppComponent` and `HeroDetailComponent`.
+
+<div class="l-sub-section">
+
+
+
+Read more about NgModules in the [NgModules](guide/ngmodule "NgModules") guide.
+
+
+</div>
+
+
+
+>>>>>>> docs(aio): change Angular Module to NgModule (#16964)
 {@a add-hero-detail}
 
 
@@ -169,4 +213,23 @@ Here are the code files discussed on this page and your app should look like thi
 
 * You created a reusable component.
 * You learned how to make a component accept input.
+<<<<<<< HEAD
 * You learned to bind a parent component to a child component.
+=======
+* You learned to declare the required application directives in an NgModule. You
+listed the directives in the `@NgModule` decorator's `declarations` array.
+* You learned to bind a parent component to a child component.
+
+Your app should look like this <live-example></live-example>.
+
+
+
+## The road ahead
+The Tour of Heroes app is more reusable with shared components,
+but its (mock) data is still hard coded within the `AppComponent`.
+That's not sustainable.
+Data access should be refactored to a separate service
+and shared among the components that need data.
+
+You’ll learn to create services in the [next tutorial](tutorial/toh-pt4 "Services") page.
+>>>>>>> docs(aio): change Angular Module to NgModule (#16964)
