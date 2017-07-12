@@ -10,6 +10,8 @@ import { HEROES } from './mock-heroes';
 // #docregion empty-class, getHeroes-stub
 @Injectable()
 export class HeroService {
+
+  constructor() { }
   // #enddocregion empty-class, getHeroes-stub, full
   /*
   // #docregion getHeroes-stub
