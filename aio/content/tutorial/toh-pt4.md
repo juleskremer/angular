@@ -11,6 +11,7 @@ As the Tour of Heroes app evolves, you'll add more components that need access t
 
 Instead of copying and pasting the same code over and over, you'll create a single reusable data service and inject it into the components that need it. Using a separate service keeps components lean and focused on supporting the view, and makes it easy to unit-test components with a mock service.
 
+<<<<<<< HEAD
 ## Creating a hero service
 
 The stakeholders want to show the heroes in various ways on different pages. Users can already select a hero from a list. Soon you'll add a dashboard with the top performing heroes and create a separate view for editing hero details. All three views need hero data.
@@ -32,7 +33,29 @@ Using the Angular CLI, create a service called `hero`.
 <<<<<<< HEAD
 The naming convention for service files is the service name in lowercase followed by `.service`. For a multi-word service name, use lower [dash-case](guide/glossary). For example, the filename for `SpecialSuperHeroService` is `special-super-hero.service.ts`.
 =======
+=======
 
+## Creating a hero service
+The stakeholders want to show the heroes in various ways on different pages.
+Users can already select a hero from a list.
+Soon you'll add a dashboard with the top performing heroes and create a separate view for editing hero details.
+All three views need hero data.
+
+At the moment, the `AppComponent` defines mock heroes for display.
+However, defining heroes is not the component's job,
+and you can't easily share the list of heroes with other components and views.
+In this page, you'll move the hero data acquisition business to a single service that provides the data and
+share that service with all components that need the data.
+
+### Create the HeroService
+Create a service using the Angular CLI called `hero.service.ts`.
+
+<code-example language="sh" class="code-shell">
+  ng generate service hero.service
+</code-example>
+>>>>>>> updating first few sections with CLI
+
+<div class="l-sub-section">
 
 The naming convention for service files is the service name in lowercase followed by `.service`.
 For a multi-word service name, use lower [dash-case](guide/glossary#dash-case).
@@ -43,17 +66,35 @@ For example, the filename for `SpecialSuperHeroService` is `special-super-hero.s
 
 The `HeroService` class should look like the below.
 
+<<<<<<< HEAD
 <code-example path="toh-pt4/app/hero.service.1.ts" region="new-service" title="src/app/hero.service.ts (starting point)" linenums="false">
+=======
+
+The `HeroService` class should look like the below.
+
+<code-example path="toh-pt4/src/app/hero.service.1.ts" region="empty-class" title="src/app/hero.service.ts (starting point)" linenums="false">
+>>>>>>> updating first few sections with CLI
 
 </code-example>
 
 ### Injectable services
+<<<<<<< HEAD
 
 Notice that the new service includes the Angular `Injectable` function as an import and is applied to that function as an `@Injectable()` decorator.
 
 The `@Injectable()` decorator tells TypeScript to emit metadata about the service. The metadata specifies that Angular may need to inject other dependencies into this service.
 
 Although the `HeroService` doesn't have any dependencies at the moment, applying the `@Injectable()` decorator ​from the start ensures consistency and future-proofing.
+=======
+Notice that the new service includes the Angular `Injectable` function as an import and is applied to that function as an `@Injectable()` decorator.
+
+The `@Injectable()` decorator tells TypeScript to emit metadata about the service.
+The metadata specifies that Angular may need to inject other dependencies into this service.
+
+Although the `HeroService` doesn't have any dependencies at the moment,
+applying the `@Injectable()` decorator ​from the start ensures
+consistency and future-proofing.
+>>>>>>> updating first few sections with CLI
 
 
 ### Getting hero data
@@ -76,7 +117,12 @@ Cut the `HEROES` array from `heroes.component.ts` and paste it to a new file in 
 
 The `HEROES` constant is exported so it can be imported elsewhere, such as the `HeroService`.
 
+<<<<<<< HEAD
 In `heroes.component.ts`, where you cut the `HEROES` array, change `heroes` property to be an uninitialized array reference.
+=======
+In `app.component.ts`, where you cut the `HEROES` array,
+change `heroes` property to be an uninitialized array reference.
+>>>>>>> updating first few sections with CLI
 
 <code-example path="toh-pt4/app/heroes.component.1.ts" region="heroes-prop" title="src/app/heroes/heroges.component.ts (heroes property)" linenums="false">
 
@@ -140,7 +186,17 @@ The constructor itself does nothing. The parameter simultaneously defines a priv
 
 Now Angular knows to supply an instance of the `HeroService` when it creates an `HeroesComponent`.
 
+<<<<<<< HEAD
 The *injector* doesn't know yet how to create a `HeroService`. If you ran the code now, Angular would fail with this error:
+=======
+The constructor itself does nothing. The parameter simultaneously
+defines a private `heroService` property and identifies it as a `HeroService` injection site.
+
+Now Angular knows to supply an instance of the `HeroService` when it creates an `AppComponent`.
+
+The *injector* doesn't know yet how to create a `HeroService`.
+If you ran the code now, Angular would fail with this error:
+>>>>>>> updating first few sections with CLI
 
 <code-example format="nocode">
 
@@ -159,8 +215,12 @@ The `providers` array  tells Angular to create a fresh instance of the `HeroServ
 {@a child-component}
 
 
+<<<<<<< HEAD
 ### *getHeroes()* in the *HeroesComponent*
 
+=======
+### *getHeroes()* in the *AppComponent*
+>>>>>>> updating first few sections with CLI
 The service is in a `heroService` private variable.
 
 Create a function to retrieve the heroes:
@@ -183,15 +243,49 @@ at creation, after each change, and at its eventual destruction.
 
 Each interface has a single method. When the component implements that method, Angular calls it at the appropriate time.
 
+<<<<<<< HEAD
 Write an `ngOnInit` method with the initialization logic inside. Angular will call it
 at the right time. In this case, initialize by calling `getHeroes()`.
 
 <code-example path="toh-pt4/app/heroes.component.1.ts" linenums="false" title="src/app/heroes/heroes.component.ts (ng-on-init)" region="ng-on-init">
+=======
+
+
+<!--Here's the essential outline for the `OnInit` interface (don't copy this into your code):
+
+<code-example path="toh-pt4/src/app/app.component.1.ts" region="on-init" title="src/app/app.component.ts" linenums="false">
+
+</code-example>-->
+
+
+Import the `OnInit` symbol from the `@angular/core` library.
+<code-example path="toh-pt4/src/app/app.component.ts" region="oninit-declaration" title="src/app/app.component.ts (ng-on-init)" linenums="false">
+</code-example>
+
+Add the implementation for the `OnInit` interface to your export statement:
+
+<code-example format="nocode">
+  export class AppComponent implements OnInit {}
+</code-example>
+
+
+
+Write an `ngOnInit` method with the initialization logic inside. Angular will call it
+at the right time. In this case, initialize by calling `getHeroes()`.
+
+
+<code-example path="toh-pt4/src/app/app.component.1.ts" linenums="false" title="src/app/app.component.ts (ng-on-init)" region="ng-on-init">
+>>>>>>> updating first few sections with CLI
 
 </code-example>
 
 The app should run as expected, showing a list of heroes and a hero detail view
 when you click on a hero name.
+<<<<<<< HEAD
+=======
+
+Here are the code files discussed in this page.
+>>>>>>> updating first few sections with CLI
 
 Here are the code files discussed on this page and your app should look like this <live-example></live-example>.
 
@@ -219,3 +313,29 @@ Here are the code files discussed on this page and your app should look like thi
 * You used the `ngOnInit` lifecycle hook to get the hero data when the `HeroesComponent` activates.
 * You defined the `HeroService` as a provider for the `HeroesComponent`.
 * You created mock hero data and imported them into the service.
+<<<<<<< HEAD
+=======
+* You designed the service to return a Promise and the component to get the data from the Promise.
+
+Your app should look like this <live-example></live-example>.
+
+
+
+<div class="l-sub-section">
+
+
+
+Read more about dependency injection in the [Dependency Injection](guide/dependency-injection) page.
+
+</div>
+
+
+<div class="l-sub-section">
+
+
+
+Read more about lifecycle hooks in the [Lifecycle Hooks](guide/lifecycle-hooks) page.
+
+</div>
+
+>>>>>>> updating first few sections with CLI

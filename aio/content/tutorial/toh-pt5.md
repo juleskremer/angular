@@ -17,6 +17,7 @@ There are new requirements for the Tour of Heroes app:
 When you’re done, users will be able to navigate the app like this:
 
 <figure>
+<<<<<<< HEAD
 
   <img src='generated/images/guide/toh/nav-diagram.png' alt="View navigations">
 
@@ -25,6 +26,27 @@ When you’re done, users will be able to navigate the app like this:
 
 To satisfy these requirements, you'll add Angular’s router to the app.  *Routing* is another name for *navigation*. The router is the mechanism for navigating from view to view.
 
+=======
+  <img src='generated/images/guide/toh/nav-diagram.png' alt="View navigations">
+</figure>
+
+
+
+To satisfy these requirements, you'll add Angular’s router to the app.  *Routing* is another name for *navigation*. The router is the mechanism for navigating from view to view.
+
+
+## Action plan
+
+Here's the plan:
+
+* Turn `AppComponent` into an application shell that only handles navigation.
+* Relocate the *Heroes* concerns within the current `AppComponent` to a separate `HeroesComponent`.
+* Add routing.
+* Create a new `DashboardComponent`.
+* Tie the *Dashboard* into the navigation structure.
+
+
+>>>>>>> updating first few sections with CLI
 ## Splitting the *AppComponent*
 
 The current app loads `AppComponent` and immediately displays the list of heroes from the `HeroesComponent` template.

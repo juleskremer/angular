@@ -1,10 +1,17 @@
 
 # Tutorial: Tour of Heroes
 
+<<<<<<< HEAD
 The Tour of Heroes app covers the fundamentals of Angular.  In this tutorial you will build an app that helps a staffing agency manage its stable of heroes.
 
 You'll build a basic app that has many of the features you'd expect to find in a data-driven app: acquiring and displaying a list of heroes, editing a selected hero's detail, and navigating among different views of heroic data.
 
+=======
+The plan for this tutorial is to build an app that helps a staffing agency manage its stable of heroes.
+
+The Tour of Heroes app covers the core fundamentals of Angular. You'll build a basic app that has many of the features you'd expect to find in a data-driven app: acquiring and displaying a list of heroes, editing a selected hero's detail, and navigating among different views of heroic data.
+
+>>>>>>> updating first few sections with CLI
 By the end of the tutorial you will:
 
 * use built-in directives to show and hide elements and display lists of hero data;
@@ -17,7 +24,11 @@ By the end of the tutorial you will:
 * create a shared service to assemble the heroes; and
 * use routing to navigate among different views and their components.
 
+<<<<<<< HEAD
 You'll learn enough Angular to get started and gain confidence that
+=======
+You'll learn enough core Angular to get started and gain confidence that
+>>>>>>> updating first few sections with CLI
 Angular can do whatever you need it to do. 
 
 When you're done with this tutorial, the app will look like this <live-example name="toh-pt6"></live-example>.
