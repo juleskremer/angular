@@ -1,29 +1,29 @@
-// #docplaster
-// #docregion v1
-import { Component, OnInit } from '@angular/core';
+// #docregion
+// #docregion import-input
+import { Component, OnInit, Input } from '@angular/core';
+// #enddocregion import-input
 
-// #enddocregion v1
 // #docregion hero-detail-import
 import { Hero } from '../hero';
 // #enddocregion hero-detail-import
 
-// #docregion v1
+// #docregion template
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
   styleUrls: ['./hero-detail.component.css']
-  // #enddocregion v1
-// #docregion v1
 })
+// #enddocregion template
+// #docregion class
 export class HeroDetailComponent implements OnInit{
-// #enddocregion v1
 // #docregion hero
-  hero: Hero;
+  @Input() hero: Hero;
 // #enddocregion hero
-// #docregion v1
+
   constructor() { }
 
   ngOnInit() {
   }
+
 }
-// #enddocregion v1
+// #enddocregion class

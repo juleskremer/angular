@@ -24,127 +24,8 @@ When you’re done, users will be able to navigate the app like this:
 
 
 
-To satisfy these requirements, you'll add Angular’s router to the app.
+To satisfy these requirements, you'll add Angular’s router to the app.  *Routing* is another name for *navigation*. The router is the mechanism for navigating from view to view.
 
-
-<div class="l-sub-section">
-
-
-
-For more information about the router, read the [Routing and Navigation](guide/router) page.
-
-
-</div>
-
-
-
-When you're done with this page, the app should look like this <live-example></live-example>.
-
-
-
-## Where you left off
-Before continuing with the Tour of Heroes, verify that you have the following structure.
-
-
-
-<div class='filetree'>
-
-  <div class='file'>
-    angular-tour-of-heroes
-  </div>
-
-  <div class='children'>
-
-    <div class='file'>
-      src
-    </div>
-
-    <div class='children'>
-
-      <div class='file'>
-        app
-      </div>
-
-      <div class='children'>
-
-        <div class='file'>
-          app.component.ts
-        </div>
-
-        <div class='file'>
-          app.module.ts
-        </div>
-
-        <div class='file'>
-          hero.service.ts
-        </div>
-
-        <div class='file'>
-          hero.ts
-        </div>
-
-        <div class='file'>
-          hero-detail.component.ts
-        </div>
-
-        <div class='file'>
-          mock-heroes.ts
-        </div>
-
-      </div>
-
-      <div class='file'>
-        main.ts
-      </div>
-
-      <div class='file'>
-        index.html
-      </div>
-
-      <div class='file'>
-        styles.css
-      </div>
-
-      <div class='file'>
-        systemjs.config.js
-      </div>
-
-      <div class='file'>
-        tsconfig.json
-      </div>
-
-    </div>
-
-    <div class='file'>
-      node_modules ...
-    </div>
-
-    <div class='file'>
-      package.json
-    </div>
-
-  </div>
-
-</div>
-
-
-
-## Keep the app transpiling and running
-Enter the following command in the terminal window:
-
-
-<code-example language="sh" class="code-shell">
-  npm start
-
-</code-example>
-
-
-
-This command runs the TypeScript compiler in "watch mode", recompiling automatically when the code changes.
-The command simultaneously launches the app in a browser and refreshes the browser when the code changes.
-
-
-You can keep building the Tour of Heroes without pausing to recompile or refresh the browser.
 
 ## Action plan
 
@@ -155,18 +36,6 @@ Here's the plan:
 * Add routing.
 * Create a new `DashboardComponent`.
 * Tie the *Dashboard* into the navigation structure.
-
-
-<div class="l-sub-section">
-
-
-
-*Routing* is another name for *navigation*. The router is the mechanism for navigating from view to view.
-
-
-</div>
-
-
 
 
 ## Splitting the *AppComponent*
@@ -1375,3 +1244,16 @@ You're still missing a key piece: remote data access.
 
 In the [next tutorial page](tutorial/toh-pt6 "Http")
 you’ll replace the mock data with data retrieved from a server using http.
+
+<div class="l-sub-section">
+
+
+
+For more information about the router, read the [Routing and Navigation](guide/router) page.
+
+
+</div>
+
+
+
+When you're done with this page, the app should look like this <live-example></live-example>.

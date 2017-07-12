@@ -1,4 +1,7 @@
 // #docplaster
+
+import { Component } from '@angular/core';
+
 // #docregion on-init
 import { OnInit } from '@angular/core';
 

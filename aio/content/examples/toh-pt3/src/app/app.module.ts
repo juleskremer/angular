@@ -5,7 +5,7 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }        from './app.component';
 // #docregion hero-detail-import
-import { HeroDetailComponent } from './hero-detail.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 // #enddocregion hero-detail-import
 
 @NgModule({
