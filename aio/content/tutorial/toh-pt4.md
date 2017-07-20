@@ -282,23 +282,3 @@ Here are the code files discussed in this page.
 * You designed the service to return a Promise and the component to get the data from the Promise.
 
 Your app should look like this <live-example></live-example>.
-
-
-
-<div class="l-sub-section">
-
-
-
-Read more about dependency injection in the [Dependency Injection](guide/dependency-injection) page.
-
-</div>
-
-
-<div class="l-sub-section">
-
-
-
-Read more about lifecycle hooks in the [Lifecycle Hooks](guide/lifecycle-hooks) page.
-
-</div>
-
