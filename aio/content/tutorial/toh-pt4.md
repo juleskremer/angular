@@ -29,7 +29,15 @@ Using the Angular CLI, create a service called `hero`.
 
 <div class="l-sub-section">
 
+<<<<<<< HEAD
 The naming convention for service files is the service name in lowercase followed by `.service`. For a multi-word service name, use lower [dash-case](guide/glossary). For example, the filename for `SpecialSuperHeroService` is `special-super-hero.service.ts`.
+=======
+
+
+The naming convention for service files is the service name in lowercase followed by `.service`.
+For a multi-word service name, use lower [dash-case](guide/glossary#dash-case).
+For example, the filename for `SpecialSuperHeroService` is `special-super-hero.service.ts`.
+>>>>>>> docs(aio) - Fixed link to the glossary dash-case term (#18311)
 
 </div>
 
