@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -16,12 +17,15 @@ import { FormsModule } from '@angular/forms';// <-- NgModel lives here
     HeroesComponent
 =======
 =======
+=======
+
+import { AppComponent } from './app.component';
+>>>>>>> updating services section for cli
 import { HeroesComponent } from './heroes/heroes.component';
 
 >>>>>>> restructure of tutorial for appshell
 import { FormsModule } from '@angular/forms';// <-- NgModel lives here
 
-import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
