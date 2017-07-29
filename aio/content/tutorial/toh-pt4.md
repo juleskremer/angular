@@ -22,7 +22,7 @@ Users can already select a hero from a list.
 Soon you'll add a dashboard with the top performing heroes and create a separate view for editing hero details.
 All three views need hero data.
 
-At the moment, the `AppComponent` defines mock heroes for display.
+At the moment, the `HeroesComponent` defines mock heroes for display.
 However, defining heroes is not the component's job,
 and you can't easily share the list of heroes with other components and views.
 In this page, you'll move the hero data acquisition business to a single service that provides the data and
@@ -32,7 +32,7 @@ share that service with all components that need the data.
 Create a service using the Angular CLI called `hero.service.ts`.
 
 <code-example language="sh" class="code-shell">
-  ng generate service hero.service
+  ng generate service hero
 </code-example>
 
 <div class="l-sub-section">
@@ -43,15 +43,11 @@ For example, the filename for `SpecialSuperHeroService` is `special-super-hero.s
 
 </div>
 
-
-
 The `HeroService` class should look like the below.
 
-<code-example path="toh-pt4/src/app/hero.service.1.ts" region="empty-class" title="src/app/hero.service.ts (starting point)" linenums="false">
+<code-example path="toh-pt4/app/hero.service.1.ts" region="new-service" title="src/app/hero.service.ts (starting point)" linenums="false">
 
 </code-example>
-
-
 
 ### Injectable services
 Notice that the new service includes the Angular `Injectable` function as an import and is applied to that function as an `@Injectable()` decorator.
@@ -67,12 +63,9 @@ consistency and future-proofing.
 ### Getting hero data
 Add a `getHeroes()` method stub.
 
-
-<code-example path="toh-pt4/src/app/hero.service.1.ts" region="getHeroes-stub" title="src/app/hero.service.ts (getHeroes stub)" linenums="false">
+<code-example path="toh-pt4/app/hero.service.1.ts" region="get-heroes-stub" title="src/app/hero.service.ts (getHeroes stub)" linenums="false">
 
 </code-example>
-
-
 
 The `HeroService` could get `Hero` data from anywhere&mdash;a
 web service, local storage, or a mock data source.
@@ -81,54 +74,48 @@ you can change your mind about the implementation anytime,
 without touching the components that need hero data.
 
 ### Move the mock hero data
-Cut the `HEROES` array from `app.component.ts` and paste it to a new file in the `app` folder named `mock-heroes.ts`.
-Additionally, copy the `import {Hero} ...` statement because the heroes array uses the `Hero` class.
-
+Cut the `HEROES` array from `heroes.component.ts` and paste it to a new file in the `app` folder named `mock-heroes.ts`.
+Additionally, you will need to import the `Hero` class because the heroes array uses the `Hero` class.
 
 <code-example path="toh-pt4/src/app/mock-heroes.ts" title="src/app/mock-heroes.ts">
-
 </code-example>
-
 
 
 The `HEROES` constant is exported so it can be imported elsewhere, such as the `HeroService`.
 
-In `app.component.ts`, where you cut the `HEROES` array,
+In `heroes.component.ts`, where you cut the `HEROES` array,
 change `heroes` property to be an uninitialized array reference.
 
-<code-example path="toh-pt4/src/app/app.component.1.ts" region="heroes-prop" title="src/app/app.component.ts (heroes property)" linenums="false">
+<code-example path="toh-pt4/app/heroes.component.1.ts" region="heroes-prop" title="src/app/heroes/heroges.component.ts (heroes property)" linenums="false">
 
 </code-example>
-
 
 
 ### Return mocked hero data
 Back in the `HeroService`, import the mock `HEROES` and return it from the `getHeroes()` method.
 The `HeroService` looks like this:
 
-<code-example path="toh-pt4/src/app/hero.service.1.ts" region="full" title="src/app/hero.service.ts" linenums="false">
+<code-example path="toh-pt4/app/hero.service.1.ts" region="service-1" title="src/app/hero.service.ts" linenums="false">
 
 </code-example>
-
 
 
 ### Import the hero service
-You're ready to use the `HeroService` in other components, starting with `AppComponent`.
+You're ready to use the `HeroService` in other components, starting with `HeroesComponent`.
 
 Import the `HeroService` so that you can reference it in the code.
 
-<code-example path="toh-pt4/src/app/app.component.ts" linenums="false" title="src/app/app.component.ts (hero-service-import)" region="hero-service-import">
+<code-example path="toh-pt4/app/heroes.component.1.ts" linenums="false" title="src/app/heroes/heroes.component.ts (hero-service-import)" region="hero-service-import">
 
 </code-example>
 
 
-
 ### Don't use *new* with the *HeroService*
-How should the `AppComponent` acquire a runtime concrete `HeroService` instance?
+How should the `HeroesComponent` acquire a runtime concrete `HeroService` instance?
 
 You could create a new instance of the `HeroService` with `new` like this:
 
-<code-example path="toh-pt4/src/app/app.component.1.ts" region="new-service" title="src/app/app.component.ts" linenums="false">
+<code-example path="toh-pt4/app/heroes.component.1.ts" region="new-service" title="src/app/heroes/heroes.component.ts" linenums="false">
 
 </code-example>
 
@@ -143,7 +130,7 @@ Patching code in multiple places is error prone and adds to the test burden.
 * You create a service each time you use `new`.
 What if the service caches heroes and shares that cache with others?
 You couldn't do that.
-* With the `AppComponent` locked into a specific implementation of the `HeroService`,
+* With the `HeroesComponent` locked into a specific implementation of the `HeroService`,
 switching implementations for different scenarios, such as operating offline or using
 different mocked versions for testing, would be difficult.
 
@@ -157,7 +144,7 @@ Instead of using the *new* line, you'll add two lines.
 
 Add the constructor:
 
-<code-example path="toh-pt4/src/app/app.component.1.ts" region="ctor" title="src/app/app.component.ts (constructor)">
+<code-example path="toh-pt4/app/heroes.component.1.ts" region="ctor" title="src/app/heroes/heroes.component.ts (constructor)">
 
 </code-example>
 
@@ -166,48 +153,44 @@ Add the constructor:
 The constructor itself does nothing. The parameter simultaneously
 defines a private `heroService` property and identifies it as a `HeroService` injection site.
 
-Now Angular knows to supply an instance of the `HeroService` when it creates an `AppComponent`.
+Now Angular knows to supply an instance of the `HeroService` when it creates an `HeroesComponent`.
 
 The *injector* doesn't know yet how to create a `HeroService`.
 If you ran the code now, Angular would fail with this error:
 
 <code-example format="nocode">
-  EXCEPTION: No provider for HeroService! (AppComponent -> HeroService)
+  EXCEPTION: No provider for HeroService! (HeroesComponent -> HeroService)
 </code-example>
-
-
 
 To teach the injector how to make a `HeroService`,
 add the following `providers` array property to the bottom of the component metadata
 in the `@Component` call.
 
 
-
-<code-example path="toh-pt4/src/app/app.component.1.ts" linenums="false" title="src/app/app.component.ts (providers)" region="providers">
+<code-example path="toh-pt4/app/heroes.component.1.ts" linenums="false" title="src/app/heroes/heroes.component.ts (providers)" region="providers">
 
 </code-example>
 
 
-
-The `providers` array  tells Angular to create a fresh instance of the `HeroService` when it creates an `AppComponent`.
-The `AppComponent`, as well as its child components, can use that service to get hero data.
+The `providers` array  tells Angular to create a fresh instance of the `HeroService` when it creates a `HeroesComponent`.
+The `HeroesComponent`, as well as its child components, can use that service to get hero data.
 
 {@a child-component}
 
 
-### *getHeroes()* in the *AppComponent*
+### *getHeroes()* in the *HeroesComponent*
 The service is in a `heroService` private variable.
 
 Create a function to retrieve the heroes:
 
-<code-example path="toh-pt4/src/app/app.component.1.ts" linenums="false" title="src/app/app.component.ts (getHeroes)" region="getHeroes">
+<code-example path="toh-pt4/app/heroes.component.1.ts" linenums="false" title="src/app/heroes/heroes.component.ts (getHeroes)" region="getHeroes">
 
 </code-example>
 
 {@a oninit}
 
 ### The *ngOnInit* lifecycle hook
-`AppComponent` should fetch and display hero data with no issues.
+`HeroesComponent` should fetch and display hero data with no issues.
 
  You might be tempted to call the `getHeroes()` method in a constructor, but
 a constructor should not contain complex logic,
@@ -220,32 +203,10 @@ at creation, after each change, and at its eventual destruction.
 
 Each interface has a single method. When the component implements that method, Angular calls it at the appropriate time.
 
-
-
-<!--Here's the essential outline for the `OnInit` interface (don't copy this into your code):
-
-<code-example path="toh-pt4/src/app/app.component.1.ts" region="on-init" title="src/app/app.component.ts" linenums="false">
-
-</code-example>-->
-
-
-Import the `OnInit` symbol from the `@angular/core` library.
-<code-example path="toh-pt4/src/app/app.component.ts" region="oninit-declaration" title="src/app/app.component.ts (ng-on-init)" linenums="false">
-</code-example>
-
-Add the implementation for the `OnInit` interface to your export statement:
-
-<code-example format="nocode">
-  export class AppComponent implements OnInit {}
-</code-example>
-
-
-
 Write an `ngOnInit` method with the initialization logic inside. Angular will call it
 at the right time. In this case, initialize by calling `getHeroes()`.
 
-
-<code-example path="toh-pt4/src/app/app.component.1.ts" linenums="false" title="src/app/app.component.ts (ng-on-init)" region="ng-on-init">
+<code-example path="toh-pt4/app/heroes.component.1.ts" linenums="false" title="src/app/heroes/heroes.component.ts (ng-on-init)" region="ng-on-init">
 
 </code-example>
 
@@ -261,7 +222,7 @@ Here are the code files discussed in this page.
 
   </code-pane>
 
-  <code-pane title="src/app/app.component.ts" path="toh-pt4/src/app/app.component.ts">
+  <code-pane title="src/app/heroes/heroes.component.ts" path="toh-pt4/src/app/heroes/heroes.component.ts">
 
   </code-pane>
 
@@ -276,9 +237,8 @@ Here are the code files discussed in this page.
 ## Summary
 
 * You created a service class that can be shared by many components.
-* You used the `ngOnInit` lifecycle hook to get the hero data when the `AppComponent` activates.
-* You defined the `HeroService` as a provider for the `AppComponent`.
+* You used the `ngOnInit` lifecycle hook to get the hero data when the `HeroesComponent` activates.
+* You defined the `HeroService` as a provider for the `HeroesComponent`.
 * You created mock hero data and imported them into the service.
-* You designed the service to return a Promise and the component to get the data from the Promise.
 
 Your app should look like this <live-example></live-example>.

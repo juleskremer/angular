@@ -2,20 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
 
-import { FormsModule } from '@angular/forms';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+// #docregion heroes-import
+import { HeroesComponent } from './heroes/heroes.component';
+// #enddocregion heroes-import
+
 
 @NgModule({
-  declarations: [
+
+    // #docregion declarations
+
+    declarations: [
     AppComponent,
-    HeroesComponent,
-    HeroDetailComponent
+    HeroesComponent
   ],
+
+      // #enddocregion declarations
+
   imports: [
-    BrowserModule,    
-    FormsModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

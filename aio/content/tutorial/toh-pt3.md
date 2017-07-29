@@ -165,7 +165,6 @@ The `hero` property is the only thing in the `HeroDetailComponent` class. All it
 
 Here's the complete `HeroDetailComponent`.
 
-<<<<<<< HEAD
 <code-example path="toh-pt3/src/app/hero-detail.component.ts" title="src/app/hero-detail.component.ts">
 
 </code-example>
@@ -179,14 +178,10 @@ Every component must be declared in one&mdash;and only one&mdash;NgModule.
 Open `app.module.ts` in your editor and import the `HeroDetailComponent` so you can refer to it.
 
 <code-example path="toh-pt3/src/app/app.module.ts" region="hero-detail-import" title="src/app/app.module.ts">
-=======
-<code-example path="toh-pt3/src/app/hero-detail/hero-detail.component.ts" title="src/app/hero-detail/hero-detail.component.ts">
->>>>>>> updating first few sections with CLI
 
 </code-example>
 
 
-<<<<<<< HEAD
 
 Add `HeroDetailComponent` to the module's `declarations` array.
 
@@ -212,8 +207,6 @@ Read more about NgModules in the [NgModules](guide/ngmodule "NgModules") guide.
 
 
 
-=======
->>>>>>> updating first few sections with CLI
 {@a add-hero-detail}
 
 
