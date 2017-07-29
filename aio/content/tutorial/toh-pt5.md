@@ -26,18 +26,6 @@ When you’re done, users will be able to navigate the app like this:
 
 To satisfy these requirements, you'll add Angular’s router to the app.  *Routing* is another name for *navigation*. The router is the mechanism for navigating from view to view.
 
-
-## Action plan
-
-Here's the plan:
-
-* Turn `AppComponent` into an application shell that only handles navigation.
-* Relocate the *Heroes* concerns within the current `AppComponent` to a separate `HeroesComponent`.
-* Add routing.
-* Create a new `DashboardComponent`.
-* Tie the *Dashboard* into the navigation structure.
-
-
 ## Splitting the *AppComponent*
 
 The current app loads `AppComponent` and immediately displays the list of heroes.
@@ -49,6 +37,12 @@ The `AppComponent` should only handle navigation, so you'll
 move the display of *Heroes* out of `AppComponent` and into its own `HeroesComponent`.
 
 ### *HeroesComponent*
+
+Create a component using the Angular CLI called `HeroesComponent`
+
+<code-example language="sh" class="code-shell">
+  ng generate component heroes.component
+</code-example>
 
 `AppComponent` is already dedicated to *Heroes*.
 Instead of moving the code out of `AppComponent`, rename it to `HeroesComponent`

@@ -1,26 +1,13 @@
 
 
-<!-- #docregion show-hero -->
-<h1>{{title}}</h1><h2>{{hero}} details!</h2>
-<!-- #enddocregion show-hero -->
 
-<!-- #docregion show-hero-2 -->
-<h1>{{title}}</h1><h2>{{hero.name}} details!</h2>
-<!-- #enddocregion show-hero-2 -->
+<!-- #docregion heroes-component -->
+{{title}}
+<app-heroes>
+<!-- #enddocregion heroes-component -->
 
-<!-- #docregion show-hero-3 -->
-<h1>{{title}}</h1>
-<h2>{{hero.name}} details!</h2>
-<div><label>id: </label>{{hero.id}}</div>
-<div><label>name: </label>{{hero.name}}</div>
-<!-- #enddocregion show-hero-3 -->
 
-<!-- #docregion name-input -->
-<div>
-    <label>name: </label>
-    <input [(ngModel)]="hero.name" placeholder="name">
-</div>
-<!-- #enddocregion name-input -->
+
 
 
 <!-- #docregion hero-detail-binding -->
