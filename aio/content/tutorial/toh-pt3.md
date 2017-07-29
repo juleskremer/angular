@@ -98,7 +98,7 @@ First, amend the `@angular/core` import statement in the `HeroDetailComponent` t
 Then declare that `hero` is an *input* property by
 preceding it with the `@Input` decorator that you imported earlier.
 
-<code-example path="toh-pt3/app/hero-detail/hero-detail.component.1.ts" region="hero" title="src/app/hero-detail/hero-detail.component.ts (excerpt)" linenums="false">
+<code-example path="toh-pt3/src/app/hero-detail/hero-detail.component.ts" region="hero" title="src/app/hero-detail/hero-detail.component.ts (excerpt)" linenums="false">
 
 </code-example>
 
@@ -123,7 +123,7 @@ It used to display the hero details on its own, before you cut out that portion 
 Add an `<app-hero-detail>` element near the bottom of the `HeroesComponent` template,
 where the hero detail view used to be.
 
-<code-example path="toh-pt3/app/heroes/heroes.component.1.html" region="hero-details" title="heroes.component.html (excerpt)" linenums="false">
+<code-example path="toh-pt3/app/heroes-component.1.html" region="hero-details" title="heroes.component.html (excerpt)" linenums="false">
 
 </code-example>
 
@@ -139,7 +139,7 @@ Now every time the `selectedHero` changes, the `HeroDetailComponent` gets a new 
 
 The revised `HeroesComponent` template should look like this:
 
-<code-example path="toh-pt3/app/heroes-component.1.html" region="hero-detail-template" title="app.component.html" linenums="false">
+<code-example path="toh-pt3/app/heroes-component.1.html" region="hero-detail-template" title="heroes.component.html" linenums="false">
 
 </code-example>
 

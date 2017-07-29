@@ -1,3 +1,4 @@
+// #docregion initial-component
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-
-    // #docregion add-hero
-  hero = 'Windstorm';
-  // #enddocregion add-hero
   
   constructor() { }
 
@@ -17,3 +14,8 @@ export class HeroesComponent implements OnInit {
   }
 
 }
+// #enddocregion initial-component
+
+    // #docregion add-hero
+  hero = 'Windstorm';
+  // #enddocregion add-hero

@@ -213,7 +213,7 @@ Here are the code files discussed in this page.
 
   </code-pane>
 
-  <code-pane title="src/app/heroes/heroes.component.html" path="toh-pt2/src/app/heroes/heroescomponent.html">
+  <code-pane title="src/app/heroes/heroes.component.html" path="toh-pt2/src/app/heroes/heroes.component.html">
 
   </code-pane>
 
