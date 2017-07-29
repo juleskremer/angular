@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Component } from '@angular/core';
 =======
 // #docplaster
@@ -13,6 +14,9 @@ import { Hero } from './hero';
 import { HeroService } from './hero.service';
 // #enddocregion hero-service-import
 >>>>>>> updating first few sections with CLI
+=======
+import { Component } from '@angular/core';
+>>>>>>> restructure of tutorial for appshell
 
 @Component({
   selector: 'app-root',

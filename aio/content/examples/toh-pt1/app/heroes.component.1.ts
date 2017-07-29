@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // #docregion initial-component
+=======
+>>>>>>> restructure of tutorial for appshell
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
+<<<<<<< HEAD
+=======
+
+    // #docregion add-hero
+  hero = 'Windstorm';
+  // #enddocregion add-hero
+>>>>>>> restructure of tutorial for appshell
   
   constructor() { }
 
@@ -14,8 +24,11 @@ export class HeroesComponent implements OnInit {
   }
 
 }
+<<<<<<< HEAD
 // #enddocregion initial-component
 
     // #docregion add-hero
   hero = 'Windstorm';
   // #enddocregion add-hero
+=======
+>>>>>>> restructure of tutorial for appshell

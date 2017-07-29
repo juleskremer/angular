@@ -34,6 +34,7 @@ To satisfy these requirements, you'll add Angular’s router to the app.  *Routi
 
 To satisfy these requirements, you'll add Angular’s router to the app.  *Routing* is another name for *navigation*. The router is the mechanism for navigating from view to view.
 
+<<<<<<< HEAD
 
 ## Action plan
 
@@ -50,6 +51,83 @@ Here's the plan:
 ## Splitting the *AppComponent*
 
 The current app loads `AppComponent` and immediately displays the list of heroes from the `HeroesComponent` template.
+=======
+## Splitting the *AppComponent*
+
+The current app loads `AppComponent` and immediately displays the list of heroes.
+
+The revised app should present a shell with a choice of views (*Dashboard* and *Heroes*)
+and then default to one of them.
+
+The `AppComponent` should only handle navigation, so you'll
+move the display of *Heroes* out of `AppComponent` and into its own `HeroesComponent`.
+
+### *HeroesComponent*
+
+Create a component using the Angular CLI called `HeroesComponent`
+
+<code-example language="sh" class="code-shell">
+  ng generate component heroes.component
+</code-example>
+
+`AppComponent` is already dedicated to *Heroes*.
+Instead of moving the code out of `AppComponent`, rename it to `HeroesComponent`
+and create a separate `AppComponent` shell.
+
+Do the following:
+
+* Rename the <code>app.component.ts</code> file to <code>heroes.component.ts</code>.
+* Rename the `AppComponent` class as `HeroesComponent` (rename locally, _only_ in this file).
+* Rename the selector `my-app` as `my-heroes`.
+
+
+<code-example path="toh-pt5/src/app/heroes.component.ts" region="renaming" title="src/app/heroes.component.ts (showing renamings only)">
+
+</code-example>
+
+
+
+### Create *AppComponent*
+
+The new `AppComponent` is the application shell.
+It will have some navigation links at the top and a display area below.
+
+Perform these steps:
+
+* Create the file <code>src/app/app.component.ts</code>.
+* Define an exported `AppComponent` class.
+* Add an `@Component` decorator above the class with a `my-app` selector.
+* Move the following from `HeroesComponent` to `AppComponent`:
+
+  * `title` class property.
+  * `@Component` template `<h1>` element, which contains a binding to  `title`.
+
+* Add a `<my-heroes>` element to the app template just below the heading so you still see the heroes.
+* Add `HeroesComponent` to the `declarations` array of `AppModule` so Angular recognizes the `<my-heroes>` tags.
+* Add `HeroService` to the  `providers` array of `AppModule` because you'll need it in every other view.
+* Remove `HeroService` from the `HeroesComponent` `providers` array since it was promoted.
+* Add the supporting `import` statements for `AppComponent`.
+
+The first draft looks like this:
+
+
+<code-tabs>
+
+  <code-pane title="src/app/app.component.ts (v1)" path="toh-pt5/src/app/app.component.1.ts">
+
+  </code-pane>
+
+  <code-pane title="src/app/app.module.ts (v1)" path="toh-pt5/src/app/app.module.1.ts">
+
+  </code-pane>
+
+</code-tabs>
+
+
+
+The app still runs and displays heroes.
+
+>>>>>>> restructure of tutorial for appshell
 
 ## Add routing
 
