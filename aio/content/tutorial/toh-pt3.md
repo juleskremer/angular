@@ -186,7 +186,11 @@ Open `app.module.ts` in your editor and import the `HeroDetailComponent` so you 
 Add `HeroDetailComponent` to the module's `declarations` array.
 
 
+<<<<<<< HEAD
 <code-example path="toh-pt3/src/app/app.module.ts" region="declarations" title="src/app/app.module.ts" linenums="false">
+=======
+<code-example path="toh-pt3/app/heroes-component.1.html" region="hero-details" title="heroes.component.html (excerpt)" linenums="false">
+>>>>>>> updating services section for cli
 
 </code-example>
 
@@ -239,8 +243,12 @@ Now every time the `selectedHero` changes, the `HeroDetailComponent` gets a new 
 
 The revised `AppComponent` template should look like this:
 
+<<<<<<< HEAD
 
 <code-example path="toh-pt3/app/app.component.1.html" region="hero-detail-template" title="app.component.html" linenums="false">
+=======
+<code-example path="toh-pt3/app/heroes-component.1.html" region="hero-detail-template" title="heroes.component.html" linenums="false">
+>>>>>>> updating services section for cli
 
 </code-example>
 

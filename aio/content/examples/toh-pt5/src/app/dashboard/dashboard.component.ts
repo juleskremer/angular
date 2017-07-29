@@ -1,9 +1,9 @@
 // #docplaster
-// #docregion , imports
+// #docregion imports
 import { Component, OnInit } from '@angular/core';
 
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import { Hero } from '../hero';
+import { HeroService } from '../hero.service';
 // #enddocregion imports
 
 // #docregion metadata
@@ -27,7 +27,9 @@ export class DashboardComponent implements OnInit {
   // #enddocregion ctor
 
   ngOnInit(): void {
-    this.heroService.getHeroes()
-      .then(heroes => this.heroes = heroes.slice(1, 5));
+   
+    this.heroes = this.heroService.getHeroes().slice(1, 5);
+
   }
 }
+// #enddocregion class
