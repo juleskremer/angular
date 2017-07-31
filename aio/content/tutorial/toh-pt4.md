@@ -10,6 +10,7 @@ Create a reusable service to manage the hero data calls.
 As the Tour of Heroes app evolves, you'll add more components that need access to hero data.
 
 Instead of copying and pasting the same code over and over, you'll create a single reusable data service and inject it into the components that need it. Using a separate service keeps components lean and focused on supporting the view, and makes it easy to unit-test components with a mock service.
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 ## Creating a hero service
@@ -34,33 +35,39 @@ Using the Angular CLI, create a service called `hero`.
 The naming convention for service files is the service name in lowercase followed by `.service`. For a multi-word service name, use lower [dash-case](guide/glossary). For example, the filename for `SpecialSuperHeroService` is `special-super-hero.service.ts`.
 =======
 =======
+=======
+>>>>>>> formatting changes chp 1-4
 
 ## Creating a hero service
-The stakeholders want to show the heroes in various ways on different pages.
-Users can already select a hero from a list.
-Soon you'll add a dashboard with the top performing heroes and create a separate view for editing hero details.
-All three views need hero data.
 
-At the moment, the `HeroesComponent` defines mock heroes for display.
-However, defining heroes is not the component's job,
-and you can't easily share the list of heroes with other components and views.
-In this page, you'll move the hero data acquisition business to a single service that provides the data and
-share that service with all components that need the data.
+The stakeholders want to show the heroes in various ways on different pages. Users can already select a hero from a list. Soon you'll add a dashboard with the top performing heroes and create a separate view for editing hero details. All three views need hero data.
+
+At the moment, the `HeroesComponent` defines mock heroes for display. However, defining heroes is not the component's job, and you can't easily share the list of heroes with other components and views. In this page, you'll move the hero data acquisition business to a single service that provides the data and share that service with all components that need the data.
 
 ### Create the HeroService
-Create a service using the Angular CLI called `hero.service.ts`.
+
+Using the Angular CLI, create a service called `hero`.
 
 <code-example language="sh" class="code-shell">
+
   ng generate service hero
+
 </code-example>
 >>>>>>> updating first few sections with CLI
 
 <div class="l-sub-section">
 
+<<<<<<< HEAD
 The naming convention for service files is the service name in lowercase followed by `.service`.
 For a multi-word service name, use lower [dash-case](guide/glossary#dash-case).
 For example, the filename for `SpecialSuperHeroService` is `special-super-hero.service.ts`.
+<<<<<<< HEAD
 >>>>>>> docs(aio) - Fixed link to the glossary dash-case term (#18311)
+=======
+=======
+The naming convention for service files is the service name in lowercase followed by `.service`. For a multi-word service name, use lower [dash-case](guide/glossary). For example, the filename for `SpecialSuperHeroService` is `special-super-hero.service.ts`.
+>>>>>>> formatting changes chp 1-4
+>>>>>>> formatting changes chp 1-4
 
 </div>
 
@@ -86,6 +93,7 @@ The `HeroService` class should look like the below.
 ### Injectable services
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Notice that the new service includes the Angular `Injectable` function as an import and is applied to that function as an `@Injectable()` decorator.
 
@@ -95,20 +103,29 @@ Although the `HeroService` doesn't have any dependencies at the moment, applying
 =======
 =======
 >>>>>>> restructure of tutorial for appshell
+=======
+
+>>>>>>> formatting changes chp 1-4
 Notice that the new service includes the Angular `Injectable` function as an import and is applied to that function as an `@Injectable()` decorator.
 
-The `@Injectable()` decorator tells TypeScript to emit metadata about the service.
-The metadata specifies that Angular may need to inject other dependencies into this service.
+The `@Injectable()` decorator tells TypeScript to emit metadata about the service. The metadata specifies that Angular may need to inject other dependencies into this service.
 
+<<<<<<< HEAD
 Although the `HeroService` doesn't have any dependencies at the moment,
 applying the `@Injectable()` decorator ​from the start ensures
 consistency and future-proofing.
 >>>>>>> updating first few sections with CLI
+=======
+Although the `HeroService` doesn't have any dependencies at the moment, applying the `@Injectable()` decorator ​from the start ensures consistency and future-proofing.
+>>>>>>> formatting changes chp 1-4
 
 
 ### Getting hero data
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> formatting changes chp 1-4
 Add a `getHeroes()` method stub.
 
 =======
@@ -117,6 +134,7 @@ Add a `getHeroes()` method stub.
 
 </code-example>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 The `HeroService` could get `Hero` data from anywhere&mdash;a web service, local storage, or a mock data source. Removing data access from the component means you can change your mind about the implementation anytime, without touching the components that need hero data.
 
@@ -134,10 +152,17 @@ without touching the components that need hero data.
 Cut the `HEROES` array from `heroes.component.ts` and paste it to a new file in the `app` folder named `mock-heroes.ts`.
 Additionally, you will need to import the `Hero` class because the heroes array uses the `Hero` class.
 >>>>>>> restructure of tutorial for appshell
+=======
+The `HeroService` could get `Hero` data from anywhere&mdash;a web service, local storage, or a mock data source. Removing data access from the component means you can change your mind about the implementation anytime, without touching the components that need hero data.
+
+### Move the mock hero data
+
+Cut the `HEROES` array from `heroes.component.ts` and paste it to a new file in the `app` folder named `mock-heroes.ts`. Additionally, you will need to import the `Hero` class because the heroes array uses the `Hero` class.
+>>>>>>> formatting changes chp 1-4
 
 <code-example path="toh-pt4/src/app/mock-heroes.ts" title="src/app/mock-heroes.ts">
-</code-example>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 The `HEROES` constant is exported so it can be imported elsewhere, such as the `HeroService`.
 
@@ -153,6 +178,13 @@ In `heroes.component.ts`, where you cut the `HEROES` array,
 >>>>>>> restructure of tutorial for appshell
 change `heroes` property to be an uninitialized array reference.
 >>>>>>> updating first few sections with CLI
+=======
+</code-example>
+
+The `HEROES` constant is exported so it can be imported elsewhere, such as the `HeroService`.
+
+In `heroes.component.ts`, where you cut the `HEROES` array, change `heroes` property to be an uninitialized array reference.
+>>>>>>> formatting changes chp 1-4
 
 <code-example path="toh-pt4/app/heroes.component.1.ts" region="heroes-prop" title="src/app/heroes/heroges.component.ts (heroes property)" linenums="false">
 
@@ -160,6 +192,11 @@ change `heroes` property to be an uninitialized array reference.
 
 
 ### Return mocked hero data
+<<<<<<< HEAD
+=======
+
+Back in the `HeroService`, import the mock `HEROES` and return it from the `getHeroes()` method. The `HeroService` looks like this:
+>>>>>>> formatting changes chp 1-4
 
 <<<<<<< HEAD
 Back in the `HeroService`, import the mock `HEROES` and return it from the `getHeroes()` method. The `HeroService` looks like this:
@@ -186,6 +223,7 @@ Import the `HeroService` in the `HeroesComponent` so that you can reference it i
 
 ### Don't use *new* with the *HeroService*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 How should the `HeroesComponent` acquire a runtime concrete `HeroService` instance?
 >>>>>>> restructure of tutorial for appshell
@@ -197,6 +235,12 @@ How should the `HeroesComponent` acquire a runtime concrete `HeroService` instan
 =======
 <code-example path="toh-pt4/app/heroes.component.1.ts" region="new-service" title="src/app/heroes/heroes.component.ts" linenums="false">
 >>>>>>> restructure of tutorial for appshell
+=======
+
+How should the `HeroesComponent` acquire a runtime concrete `HeroService` instance? You could create a new instance of the `HeroService` with `new` like this:
+
+<code-example path="toh-pt4/app/heroes.component.1.ts" region="new-service" linenums="false">
+>>>>>>> formatting changes chp 1-4
 
 </code-example>
 
@@ -228,6 +272,7 @@ Add the constructor:
 </code-example>
 
 The constructor itself does nothing. The parameter simultaneously defines a private `heroService` property and identifies it as a `HeroService` injection site.
+<<<<<<< HEAD
 
 Now Angular knows to supply an instance of the `HeroService` when it creates an `HeroesComponent`.
 
@@ -248,9 +293,18 @@ If you ran the code now, Angular would fail with this error:
 
   EXCEPTION: No provider for HeroService! (HeroesComponent -> HeroService)
 =======
-  EXCEPTION: No provider for HeroService! (HeroesComponent -> HeroService)
-</code-example>
+=======
 
+Now Angular knows to supply an instance of the `HeroService` when it creates an `HeroesComponent`.
+
+The *injector* doesn't know yet how to create a `HeroService`. If you ran the code now, Angular would fail with this error:
+
+<code-example format="nocode">
+
+>>>>>>> formatting changes chp 1-4
+  EXCEPTION: No provider for HeroService! (HeroesComponent -> HeroService)
+
+<<<<<<< HEAD
 To teach the injector how to make a `HeroService`,
 add the following `providers` array property to the bottom of the component metadata
 in the `@Component` call.
@@ -259,6 +313,10 @@ in the `@Component` call.
 </code-example>
 
 <<<<<<< HEAD
+=======
+</code-example>
+
+>>>>>>> formatting changes chp 1-4
 To teach the injector how to make a `HeroService`, add the following `providers` array property to the bottom of the component metadata in the `@Component` call.
 
 =======
@@ -268,12 +326,16 @@ To teach the injector how to make a `HeroService`, add the following `providers`
 </code-example>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 The `providers` array  tells Angular to create a fresh instance of the `HeroService` when it creates a `HeroesComponent`. The `HeroesComponent`, as well as its child components, can use that service to get hero data.
 =======
 
 The `providers` array  tells Angular to create a fresh instance of the `HeroService` when it creates a `HeroesComponent`.
 The `HeroesComponent`, as well as its child components, can use that service to get hero data.
 >>>>>>> restructure of tutorial for appshell
+=======
+The `providers` array  tells Angular to create a fresh instance of the `HeroService` when it creates a `HeroesComponent`. The `HeroesComponent`, as well as its child components, can use that service to get hero data.
+>>>>>>> formatting changes chp 1-4
 
 {@a child-component}
 
@@ -287,7 +349,11 @@ The `HeroesComponent`, as well as its child components, can use that service to 
 >>>>>>> updating first few sections with CLI
 =======
 ### *getHeroes()* in the *HeroesComponent*
+<<<<<<< HEAD
 >>>>>>> restructure of tutorial for appshell
+=======
+
+>>>>>>> formatting changes chp 1-4
 The service is in a `heroService` private variable.
 
 Create a function to retrieve the heroes:
@@ -300,12 +366,19 @@ Create a function to retrieve the heroes:
 
 ### The *ngOnInit* lifecycle hook
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> formatting changes chp 1-4
 `HeroesComponent` should fetch and display hero data with no issues.
 >>>>>>> restructure of tutorial for appshell
 
+<<<<<<< HEAD
 `HeroesComponent` should fetch and display hero data with no issues.
 
+=======
+>>>>>>> formatting changes chp 1-4
 You might be tempted to call the `getHeroes()` method in a constructor, but a constructor should not contain complex logic, especially a constructor that calls a server, such as a data access method. The constructor is for simple initializations, like wiring constructor parameters to properties.
 
 To have Angular call `getHeroes()`, you can implement the Angular *ngOnInit lifecycle hook*.
@@ -362,9 +435,12 @@ when you click on a hero name.
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 Here are the code files discussed in this page.
 >>>>>>> updating first few sections with CLI
 
+=======
+>>>>>>> formatting changes chp 1-4
 Here are the code files discussed on this page and your app should look like this <live-example></live-example>.
 
 <code-tabs>
@@ -391,6 +467,7 @@ Here are the code files discussed on this page and your app should look like thi
 * You used the `ngOnInit` lifecycle hook to get the hero data when the `HeroesComponent` activates.
 * You defined the `HeroService` as a provider for the `HeroesComponent`.
 * You created mock hero data and imported them into the service.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -420,3 +497,5 @@ Read more about lifecycle hooks in the [Lifecycle Hooks](guide/lifecycle-hooks) 
 </div>
 
 >>>>>>> updating first few sections with CLI
+=======
+>>>>>>> formatting changes chp 1-4

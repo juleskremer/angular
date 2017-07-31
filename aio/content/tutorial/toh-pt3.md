@@ -8,6 +8,7 @@ Refactor the master/detail view into separate components.
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 At the moment, the `HeroesComponent` displays both the list of heroes and the selected heroe's details. As the application grows, it will not be maintainable to keep all features in one component.
 
 You'll need to break it up into sub-components, each focused on a specific task or workflow. In this page, you'll create a master/detail experience by carving out the hero details into a separate, reusable component.
@@ -21,6 +22,9 @@ In the beginning, it showed details of a single hero.
 Then it became a master/detail form with both a list of heroes and the hero detail.
 Soon there will be new requirements and capabilities.
 As the application grows, it will not be maintainable to keep all features in one component.
+=======
+At the moment, the `HeroesComponent` displays both the list of heroes and the selected heroe's details. As the application grows, it will not be maintainable to keep all features in one component.
+>>>>>>> formatting changes chp 1-4
 
 You'll need to break it up into sub-components, each focused on a specific task or workflow.
 Eventually, the `AppComponent` could become a simple shell that hosts those sub-components.
@@ -32,8 +36,8 @@ In this page, you'll take the first step in that direction by carving out the he
 When you're done with this page, the app should look like this <live-example></live-example>.
 
 ## Make a hero detail component
-Generate a new component named `hero-detail.component` using the Angular CLI.
 
+<<<<<<< HEAD
 <code-example language="sh" class="code-shell">
   ng generate component hero-detail.component
 </code-example>
@@ -79,26 +83,30 @@ Every component must be declared in one&mdash;and only one&mdash;Angular module.
 <code-example path="toh-pt3/src/app/app.module.ts" region="hero-detail-import" title="src/app/app.module.ts">
 
 </code-example>
+=======
+Using the Angular CLI, generate a new component named `hero-detail`.
+>>>>>>> formatting changes chp 1-4
 
-and adding the `HeroDetailComponent` to the module's `declarations` array as shown here:
+<code-example language="sh" class="code-shell">
 
-<code-example path="toh-pt3/src/app/app.module.ts" region="declarations" title="src/app/app.module.ts" linenums="false">
+  ng generate component hero-detail
 
 </code-example>
 
-
-In general, the `declarations` array contains a list of application components, pipes, and directives that belong to the module.
-A component must be declared in a module before other components can reference it.
-This module declares only the two application components, `AppComponent` and `HeroDetailComponent`.
-
-
 ### Hero detail template
+<<<<<<< HEAD
 To move the hero detail view to the `HeroDetailComponent`,
 cut the hero detail _content_ from the bottom of the `AppComponent` template
 and paste it into the `HeroDetailComponent`'s template.
 >>>>>>> updating first few sections with CLI
 
 To move the hero detail view to the `HeroDetailComponent`, cut the hero detail _content_ from the bottom of the `HeroesComponent` template and replace the boilerplate text in the `HeroDetailComponent`'s template.
+=======
+
+To move the hero detail view to the `HeroDetailComponent`, cut the hero detail _content_ from the bottom of the `HeroesComponent` template and replace the boilerplate text in the `HeroDetailComponent`'s template.
+
+The `HeroDetailComponent` has a _hero_, not a _selected hero_. Replace the word, "selectedHero", with the word, "hero", everywhere in the template. When you're done, the new template should look like this:
+>>>>>>> formatting changes chp 1-4
 
 The `HeroDetailComponent` has a _hero_, not a _selected hero_. Replace the word, "selectedHero", with the word, "hero", everywhere in the template. When you're done, the new template should look like this:
 
@@ -121,6 +129,7 @@ Add that property to the `HeroDetailComponent` class like this:
 </code-example>
 
 The `hero` property is typed as an instance of `Hero`. The `Hero` class is still in the `heroes.component.ts` file. Now there are two components that need to reference the `Hero` class. 
+<<<<<<< HEAD
 
 The Angular [style guide](guide/styleguide#rule-of-one "Style guide: rule of one") recommends one class per file.
 
@@ -134,21 +143,29 @@ Move the `Hero` class from `app.component.ts` to its own `hero.ts` file by creat
 The `hero` property is typed as an instance of `Hero`.
 The `Hero` class is still in the `app.component.ts` file.
 Now there are two components that need to reference the `Hero` class.
+=======
+
+>>>>>>> formatting changes chp 1-4
 The Angular [style guide](guide/styleguide#rule-of-one "Style guide: rule of one") recommends one class per file.
 
-Move the `Hero` class from `app.component.ts` to its own `hero.ts` file.   Generate a new class called `hero` using the Angular CLI:
+Move the `Hero` class from `app.component.ts` to its own `hero.ts` file by creating a new class called `hero`.
 
 <code-example language="sh" class="code-shell">
+
   ng generate class hero
+
 </code-example>
 
 Move the `Hero` class definition from `app.component.ts` into the new `hero.ts` file
 >>>>>>> updating first few sections with CLI
 
 <code-example path="toh-pt3/src/app/hero.ts" title="src/app/hero.ts" linenums="false">
-</code-example>
 
+<<<<<<< HEAD
 Move the `Hero` class definition from `heroes.component.ts` into the new `hero.ts` file
+=======
+</code-example>
+>>>>>>> formatting changes chp 1-4
 
 <<<<<<< HEAD
 <code-example path="toh-pt3/src/app/hero.ts" title="src/app/hero.ts" linenums="false">
@@ -163,7 +180,8 @@ Add the following `import` statement near the top of the `app.component.ts`.
 Add the following `import` statement near the top of the `hero-detail.component.ts` file.
 >>>>>>> updating first few sections with CLI
 
-<code-example path="toh-pt3/app/hero-detail.component.1.ts" region="hero-detail-import" title="src/app/hero-detail/hero-detail.component.ts">
+<code-example path="toh-pt3/src/app/heroes/heroes.component.ts" region="import-hero" linenums="false">
+
 </code-example>
 
 Now that the `Hero` class is in its own file, the `HeroesComponent` and the `HeroDetailComponent` have to import it.
@@ -177,6 +195,7 @@ Add the following `import` statement near the top of both the `heroes.component.
 
 Later in the tutorial, the parent `AppComponent` will tell the child `HeroDetailComponent` which hero to display by binding its `selectedHero` to the `hero` property of the `HeroDetailComponent`. The binding will look like this:
 
+<<<<<<< HEAD
 <code-example path="toh-pt3/app/app.component.1.html" region="hero-detail-binding" title="src/app/app.component.html" linenums="false">
 >>>>>>> updating first few sections with CLI
 
@@ -192,6 +211,13 @@ Later in the tutorial, the parent `HeroesComponent` will tell the child `HeroDet
 Putting square brackets around the `hero` property, to the left of the equal sign (=), makes it the *target* of a property binding expression.
 You must declare a *target* binding property to be an *input* property.
 Otherwise, Angular rejects the binding and throws an error.
+=======
+<code-example path="toh-pt3/app/heroes-component.1.html" region="hero-detail-binding" linenums="false">
+
+</code-example>
+
+Putting square brackets around the `hero` property, to the left of the equal sign (=), makes it the *target* of a property binding expression. You must declare a *target* binding property to be an *input* property. Otherwise, Angular rejects the binding and throws an error.
+>>>>>>> formatting changes chp 1-4
 
 First, amend the `@angular/core` import statement to include the `Input` symbol.
 
@@ -210,6 +236,7 @@ First, amend the `@angular/core` import statement in the `HeroDetailComponent` t
 </code-example>
 
 Then declare that `hero` is an *input* property by preceding it with the `@Input` decorator that you imported earlier.
+<<<<<<< HEAD
 
 <code-example path="toh-pt3/src/app/hero-detail/hero-detail.component.ts" region="hero" title="src/app/hero-detail/hero-detail.component.ts (excerpt)" linenums="false">
 
@@ -218,6 +245,8 @@ Then declare that `hero` is an *input* property by preceding it with the `@Input
 =======
 Then declare that `hero` is an *input* property by
 preceding it with the `@Input` decorator that you imported earlier.
+=======
+>>>>>>> formatting changes chp 1-4
 
 <code-example path="toh-pt3/src/app/hero-detail/hero-detail.component.ts" region="hero" title="src/app/hero-detail/hero-detail.component.ts (excerpt)" linenums="false">
 
@@ -249,6 +278,7 @@ Every component must be declared in one&mdash;and only one&mdash;NgModule.
 
 Open `app.module.ts` in your editor and import the `HeroDetailComponent` so you can refer to it.
 
+<<<<<<< HEAD
 <code-example path="toh-pt3/src/app/app.module.ts" region="hero-detail-import" title="src/app/app.module.ts">
 
 </code-example>
@@ -306,8 +336,26 @@ Read more about NgModules in the [NgModules](guide/ngmodule "NgModules") guide.
 
 The `HeroesComponent` is still a master/detail view. It used to display the hero details on its own, before you cut out that portion of the template. Now it will delegate to the `HeroDetailComponent`.
 
+<<<<<<< HEAD
 Add an `<app-hero-detail>` element near the bottom of the `HeroesComponent` template,
 where the hero detail view used to be.  Coordinate the master `HeroesComponent` with the `HeroDetailComponent` by binding the `selectedHero` property of the `HeroesComponent`
+=======
+Recall that `hero-detail` is the CSS [`selector`](tutorial/toh-pt3#selector "HeroDetailComponent selector")
+in the `HeroDetailComponent` metadata.
+That's the tag name of the element that represents the `HeroDetailComponent`.
+
+Add a `<hero-detail>` element near the bottom of the `AppComponent` template,
+where the hero detail view used to be.
+
+Coordinate the master `AppComponent` with the `HeroDetailComponent`
+by binding the `selectedHero` property of the `AppComponent`
+=======
+The `HeroesComponent` is still a master/detail view. It used to display the hero details on its own, before you cut out that portion of the template. Now it will delegate to the `HeroDetailComponent`.
+
+Add an `<app-hero-detail>` element near the bottom of the `HeroesComponent` template,
+where the hero detail view used to be.  Coordinate the master `HeroesComponent` with the `HeroDetailComponent` by binding the `selectedHero` property of the `HeroesComponent`
+>>>>>>> formatting changes chp 1-4
+>>>>>>> formatting changes chp 1-4
 to the `hero` property of the `HeroDetailComponent`.
 
 <<<<<<< HEAD
@@ -318,7 +366,11 @@ to the `hero` property of the `HeroDetailComponent`.
 
 </code-example>
 
+<<<<<<< HEAD
 Now, every time the `selectedHero` changes, the `HeroDetailComponent` gets a new hero to display.
+=======
+<<<<<<< HEAD
+>>>>>>> formatting changes chp 1-4
 
 The revised `HeroesComponent` template should look like this:
 
@@ -326,6 +378,9 @@ The revised `HeroesComponent` template should look like this:
 <code-example path="toh-pt3/app/heroes-component.1.html" region="hero-detail-template" title="heroes.component.html" linenums="false">
 =======
 Now every time the `selectedHero` changes, the `HeroDetailComponent` gets a new hero to display.
+=======
+Now, every time the `selectedHero` changes, the `HeroDetailComponent` gets a new hero to display.
+>>>>>>> formatting changes chp 1-4
 
 The revised `AppComponent` template should look like this:
 
@@ -343,6 +398,14 @@ The revised `AppComponent` template should look like this:
 </code-example>
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> formatting changes chp 1-4
+>>>>>>> formatting changes chp 1-4
 ## What changed?
 As [before](tutorial/toh-pt2), whenever a user clicks on a hero name,
 the hero detail appears below the hero list.
@@ -360,6 +423,7 @@ without touching the parent `HeroesComponent`.
 1. You can re-use the `HeroDetailComponent` in the template of some future parent component.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Here are the code files discussed on this page and your app should look like this <live-example></live-example>.
 
 <code-tabs>
@@ -373,9 +437,13 @@ Here are the code files discussed on this page and your app should look like thi
 =======
 Here are the code files discussed in this page.
 
+=======
+Here are the code files discussed on this page and your app should look like this <live-example></live-example>.
+>>>>>>> formatting changes chp 1-4
 
 <code-tabs>
 
+<<<<<<< HEAD
   <code-pane title="src/app/app.component.ts" path="toh-pt3/src/app/app.component.ts">
 
 >>>>>>> updating first few sections with CLI
@@ -400,6 +468,27 @@ Here are the code files discussed in this page.
 <<<<<<< HEAD
 =======
   <code-pane title="src/app/hero-detail/hero-detail.component.html" path="toh-pt3/src/app/hero-detail/hero-detail.component.html">
+=======
+  <code-pane title="src/app/hero.ts" path="toh-pt3/src/app/hero.ts">
+  
+  </code-pane>
+
+  <code-pane title="src/app/heroes/heros-component.ts" path="toh-pt3/src/app/heroes/heroes.component.ts">
+  
+  </code-pane>
+
+  <code-pane title="src/app/heroes/heros-component.html" path="toh-pt3/src/app/heroes/heroes.component.html">
+  
+  </code-pane>
+
+  <code-pane title="src/app/hero-detail/hero-detail.component.ts" path="toh-pt3/src/app/hero-detail/hero-detail.component.ts">
+  
+  </code-pane>
+
+  <code-pane title="src/app/hero-detail/hero-detail.component.html" path="toh-pt3/src/app/hero-detail/hero-detail.component.html">
+  
+  </code-pane>
+>>>>>>> formatting changes chp 1-4
 
   </code-pane>
 </code-tabs>
@@ -412,8 +501,11 @@ Here are the code files discussed in this page.
 * You created a reusable component.
 * You learned how to make a component accept input.
 <<<<<<< HEAD
+<<<<<<< HEAD
 * You learned to bind a parent component to a child component.
 =======
+=======
+>>>>>>> formatting changes chp 1-4
 * You learned to declare the required application directives in an NgModule. You
 listed the directives in the `@NgModule` decorator's `declarations` array.
 * You learned to bind a parent component to a child component.
@@ -435,4 +527,10 @@ You’ll learn to create services in the [next tutorial](tutorial/toh-pt4 "Servi
 =======
 <font color="red">THE LIVE EXAMPLES NEED TO BE UPDATED</font>
 Your app should look like this <live-example></live-example>.
+<<<<<<< HEAD
 >>>>>>> updating first few sections with CLI
+=======
+=======
+* You learned to bind a parent component to a child component.
+>>>>>>> formatting changes chp 1-4
+>>>>>>> formatting changes chp 1-4

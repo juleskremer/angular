@@ -18,6 +18,7 @@ When you’re done, users will be able to navigate the app like this:
 
 <figure>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   <img src='generated/images/guide/toh/nav-diagram.png' alt="View navigations">
 
@@ -27,9 +28,12 @@ When you’re done, users will be able to navigate the app like this:
 To satisfy these requirements, you'll add Angular’s router to the app.  *Routing* is another name for *navigation*. The router is the mechanism for navigating from view to view.
 
 =======
-  <img src='generated/images/guide/toh/nav-diagram.png' alt="View navigations">
-</figure>
+=======
 
+>>>>>>> formatting changes chp 1-4
+  <img src='generated/images/guide/toh/nav-diagram.png' alt="View navigations">
+
+</figure>
 
 
 To satisfy these requirements, you'll add Angular’s router to the app.  *Routing* is another name for *navigation*. The router is the mechanism for navigating from view to view.
@@ -141,6 +145,7 @@ Use the Angular router to enable navigation.
 
 The Angular router is an external, optional Angular NgModule called `RouterModule`.
 <<<<<<< HEAD
+<<<<<<< HEAD
 The router is a combination of multiple provided services (`RouterModule`), multiple directives (`RouterOutlet, RouterLink, RouterLinkActive`), and a configuration (`Routes`). You'll configure the routes first.
 
 {@a configure-routes}
@@ -157,10 +162,13 @@ Import the `RouterModule` and add it to the `AppModule` imports array.
 The router is a combination of multiple provided services (`RouterModule`),
 multiple directives (`RouterOutlet, RouterLink, RouterLinkActive`),
 and a configuration (`Routes`). You'll configure the routes first.
+=======
+The router is a combination of multiple provided services (`RouterModule`), multiple directives (`RouterOutlet, RouterLink, RouterLinkActive`), and a configuration (`Routes`). You'll configure the routes first.
+>>>>>>> formatting changes chp 1-4
 
 {@a configure-routes}
 
-### Make the router available
+### Configure the router
 
 Import the `RouterModule` and add it to the `AppModule` imports array.
 
@@ -168,9 +176,12 @@ Import the `RouterModule` and add it to the `AppModule` imports array.
 
 </code-example>
 
+<<<<<<< HEAD
 ### Configure routes
 
 >>>>>>> updating services section for cli
+=======
+>>>>>>> formatting changes chp 1-4
 *Routes* tell the router which views to display when a user clicks a link or
 pastes a URL into the browser address bar.
 
@@ -193,11 +204,15 @@ This route definition has the following parts:
 
 The `forRoot()` method is called because a configured router is provided at the app's root.
 <<<<<<< HEAD
+<<<<<<< HEAD
 The `forRoot()` method supplies the Router service providers and directives needed for routing, and performs the initial navigation based on the current browser URL.
 =======
 The `forRoot()` method supplies the Router service providers and directives needed for routing, and
 performs the initial navigation based on the current browser URL.
 >>>>>>> updating services section for cli
+=======
+The `forRoot()` method supplies the Router service providers and directives needed for routing, and performs the initial navigation based on the current browser URL.
+>>>>>>> formatting changes chp 1-4
 
 </div>
 
@@ -219,6 +234,7 @@ The revised template looks like this:
 </code-example>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Note the `routerLink` binding in the anchor tag. The `RouterLink` directive (another of the `RouterModule` directives) is bound to a string that tells the router where to navigate when the user clicks the link.
 
 Since the link is not dynamic, a routing instruction is defined with a one-time binding to the route path. Looking back at the route configuration, you can confirm that `'/heroes'` is the path of the route to the `HeroesComponent`.
@@ -230,6 +246,11 @@ that tells the router where to navigate when the user clicks the link.
 Since the link is not dynamic, a routing instruction is defined with a one-time binding to the route path.
 Looking back at the route configuration, you can confirm that `'/heroes'` is the path of the route to the `HeroesComponent`.
 >>>>>>> updating services section for cli
+=======
+Note the `routerLink` binding in the anchor tag. The `RouterLink` directive (another of the `RouterModule` directives) is bound to a string that tells the router where to navigate when the user clicks the link.
+
+Since the link is not dynamic, a routing instruction is defined with a one-time binding to the route path. Looking back at the route configuration, you can confirm that `'/heroes'` is the path of the route to the `HeroesComponent`.
+>>>>>>> formatting changes chp 1-4
 
 Refresh the browser. The browser displays the app title and heroes link, but not the heroes list.
 
@@ -248,17 +269,18 @@ The  *AppComponent* is now attached to a router and displays routed views. For t
 ## Add a dashboard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Routing only makes sense when multiple views exist. To add another view, create a placeholder `DashboardComponent`, which users can navigate to and from:
 =======
 Routing only makes sense when multiple views exist.
 To add another view, create a placeholder `DashboardComponent`, which users can navigate to and from using the Angular CLI:
+=======
+Routing only makes sense when multiple views exist. To add another view, create a placeholder `DashboardComponent`, which users can navigate to and from:
+>>>>>>> formatting changes chp 1-4
 
 <code-example language="sh" class="code-shell">
-  ng generate component dashboard
-</code-example>  
 
-<code-example path="toh-pt5/app/dashboard.component.1.ts" title="src/app/dashboard/dashboard.component.ts (v1)">
-
+<<<<<<< HEAD
 </code-example>
 >>>>>>> updating services section for cli
 
@@ -267,6 +289,10 @@ To add another view, create a placeholder `DashboardComponent`, which users can 
 <<<<<<< HEAD
   ng generate component dashboard
 
+=======
+  ng generate component dashboard
+
+>>>>>>> formatting changes chp 1-4
 </code-example>  
 
 =======
@@ -283,11 +309,16 @@ add the following route definition to the `Routes` array of definitions.
 ### Add a redirect route
 
 Currently, the browser launches with `/` in the address bar. When the app starts, it should show the dashboard and display a `/dashboard` URL in the browser address bar.
+<<<<<<< HEAD
 
 To make this happen, use a redirect route. Add the following to the array of route definitions:
 
 <<<<<<< HEAD
 =======
+=======
+
+To make this happen, use a redirect route. Add the following to the array of route definitions:
+>>>>>>> formatting changes chp 1-4
 
 >>>>>>> updating services section for cli
 <code-example path="toh-pt5/app/app.module.1.ts" region="redirect" title="src/app/app.module.ts (redirect)">
@@ -300,9 +331,12 @@ To make this happen, use a redirect route. Add the following to the array of rou
 Add a dashboard navigation link to the template, just above the *Heroes* link.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> updating services section for cli
+=======
+>>>>>>> formatting changes chp 1-4
 <code-example path="toh-pt5/app/app.component.1.html" region="add-dashboard" title="src/app/app.component.html">
 
 </code-example>
@@ -322,13 +356,17 @@ To make the dashboard more interesting, you'll display the top four heroes at a 
 Replace the generated text of `dashboard.component.html` with this content:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> updating services section for cli
+=======
+>>>>>>> formatting changes chp 1-4
 <code-example path="toh-pt5/app/dashboard.component.1.html" title="src/app/dashboard/dashboard.component.html">
 
 </code-example>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 ### Get heroes
@@ -351,15 +389,18 @@ Angular injects `HeroService` and you can use it in the `DashboardComponent`.
 <code-example path="toh-pt5/app/app.module.1.ts" region="imports" title="src/app/app.module.ts (import HeroService)">
 
 </code-example>
+=======
+>>>>>>> formatting changes chp 1-4
 
 ### Get heroes
 
-In `dashboard.component.ts`, add the following `import` statements.
+In `dashboard.component.ts`, add the `Hero` and `HeroService`.
 
 <code-example path="toh-pt5/src/app/dashboard/dashboard.component.ts" region="imports" title="src/app/dashboard/dashboard.component.ts (imports)">
 
 </code-example>
 
+<<<<<<< HEAD
 
 
 Now create the `DashboardComponent` class like this:
@@ -370,6 +411,8 @@ Now create the `DashboardComponent` class like this:
 
 </code-example>
 
+=======
+>>>>>>> formatting changes chp 1-4
 Similar to the `HeroesComponent`, you will:
 
 * Define a `heroes` array property.
@@ -433,9 +476,12 @@ You need to represent the variable part of the route with a *parameter* (or *tok
 Use the following *route definition*.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> updating services section for cli
+=======
+>>>>>>> formatting changes chp 1-4
 <code-example path="toh-pt5/app/app.module.1.ts" region="hero-detail" title="src/app/app.module.ts (hero detail)">
 
 </code-example>
@@ -444,9 +490,12 @@ The colon (:) in the path indicates that `:id` is a placeholder for a specific h
 when navigating to the `HeroDetailComponent`.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> updating services section for cli
+=======
+>>>>>>> formatting changes chp 1-4
 You're finished with the app routes.
 
 You didn't add a `'Hero Detail'` link to the template because users
@@ -479,9 +528,12 @@ in the `ActivatedRoute` service and use the `HeroService` to fetch the hero with
 Add the following imports:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> updating services section for cli
+=======
+>>>>>>> formatting changes chp 1-4
 <code-example path="toh-pt5/app/hero-detail.component.1.ts" region="added-imports" title="src/app/hero-detail/hero-detail.component.ts">
 
 </code-example>

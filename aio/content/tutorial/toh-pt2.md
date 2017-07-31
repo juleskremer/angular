@@ -21,6 +21,9 @@ To display a list of heroes, you'll add heroes to the view's template.
 ### Create heroes
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> formatting changes chp 1-4
 Create an array of ten heroes.
 
 <code-example path="toh-pt2/src/app/heroes/heroes.component.ts" region="hero-array" title="src/app/heroes/heroes.component.ts (hero array)">
@@ -34,6 +37,7 @@ Create an array of ten heroes.
 </code-example>
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 The `HEROES` array is of type `Hero`, the class defined in the previous page. Later in this tutorial, the app will fetch the list of heroes from a web service, but for now you can display mock heroes.
 
@@ -53,8 +57,12 @@ Add a list of heroes immediately before the hero details using the built-in dire
 =======
 The `HEROES` array is of type `Hero`, the class defined in the previous page.
 Later in this tutorial, the app will fetch the list of heroes from a web service, but for now you can display mock heroes.
+=======
+The `HEROES` array is of type `Hero`, the class defined in the previous page. Later in this tutorial, the app will fetch the list of heroes from a web service, but for now you can display mock heroes.
+>>>>>>> formatting changes chp 1-4
 
 ### Expose heroes
+
 Create a public property in `HeroesComponent` that exposes the heroes for binding.
 
 <code-example path="toh-pt2/src/app/heroes/heroes.component.1.html" region="hero-array-1" title="heroes.component.ts (hero array property)">
@@ -63,9 +71,13 @@ Create a public property in `HeroesComponent` that exposes the heroes for bindin
 
 The `heroes` type isn't defined because TypeScript infers it from the `HEROES` array.
 
+<<<<<<< HEAD
 ### Display hero names in a template
 To display the hero names in an unordered list,
 insert the following chunk of HTML above the hero details.
+=======
+Add a list of heroes immediately before the hero details using the built-in directive `*ngFor`:
+>>>>>>> formatting changes chp 1-4
 
 <code-example path="toh-pt2/src/app/heroes/heroes.component.1.html" region="heroes-template-1" title="heroes.component.html (heroes template)" linenums="false">
 
@@ -90,6 +102,7 @@ Modify the `<li>` tag by adding the built-in directive `*ngFor`.
 
 <div class="l-sub-section">
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 The (`*`) prefix to `ngFor` is a critical part of this syntax. It indicates that `ngFor` is a structural directive. Learn more about `ngFor` at [ngFor Template Syntax](guide/template-syntax.html#!#ngFor)
 
@@ -116,11 +129,20 @@ that uses the `hero` template variable to display the hero's properties.
 </code-example>
 
 >>>>>>> updating first few sections with CLI
+=======
+The (`*`) prefix to `ngFor` is a critical part of this syntax. It indicates that `ngFor` is a structural directive. Learn more about `ngFor` at [ngFor Template Syntax](guide/template-syntax.html#!#ngFor)
+
+</div>
+
+>>>>>>> formatting changes chp 1-4
 When the browser refreshes, a list of heroes appears.
 
 ### Style the heroes
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> formatting changes chp 1-4
 Users should get a visual cue of which hero they are hovering over and which hero is selected.
 
 To add styles to your component, add style definitions to the component's stylesheet, `heroes.component.css`:
@@ -152,12 +174,6 @@ These styles apply only to the `AppComponent` and don't affect the outer HTML.
 These styles apply only to the `HeroesComponent` and don't affect the outer HTML.
 >>>>>>> restructure of tutorial for appshell
 
-The template for displaying heroes should look like this:
-
-<code-example path="toh-pt2/src/app/heroes/heroes.component.1.html" region="heroes-styled" title="src/app/heroes/heroes.component.html (styled heroes)" linenums="false">
-
-</code-example>
-
 
 ## Selecting a hero
 The app now displays a list of heroes as well as a single hero in the details view. But the list and the details view are not connected.
@@ -170,6 +186,9 @@ Next you'll connect the master to the detail through a `selectedHero` component 
 
 ### Handle click events
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> formatting changes chp 1-4
 
 Add a click event binding to the `<li>` like this:
 
@@ -189,17 +208,24 @@ Add a click event binding to the `<li>` like this:
 The parentheses identify the `<li>` element's  `click` event as the target.
 The `onSelect(hero)` expression calls the  `AppComponent` method, `onSelect()`,
 <<<<<<< HEAD
+<<<<<<< HEAD
 passing the template input variable `hero`, as an argument. That's the same `hero` variable you defined previously in the `ngFor` directive.
 =======
 passing the template input variable `hero`, as an argument.
 That's the same `hero` variable you defined previously in the `ngFor` directive.
 >>>>>>> updating first few sections with CLI
+=======
+passing the template input variable `hero`, as an argument. That's the same `hero` variable you defined previously in the `ngFor` directive.
+>>>>>>> formatting changes chp 1-4
 
 
 ### Add a click handler to expose the selected hero
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> formatting changes chp 1-4
 You no longer need the `hero` property because you're no longer displaying a single hero; you're displaying a list of heroes. The user will be able to select one of the heroes by clicking on it. So replace the `hero` property with this simple `selectedHero` property:
 
 <code-example path="toh-pt2/src/app/heroes/heroes.component.ts" region="selected-hero" title="src/app/heroes/heroes.component.ts (selectedHero)">
@@ -230,12 +256,16 @@ Add an `onSelect()` method that sets the `selectedHero` property to the `hero` t
 </code-example>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 The template still refers to the old `hero` property. Bind to the new `selectedHero` property instead as follows:
 
 <code-example path="toh-pt2/src/app/heroes/heroes.component.1.html" region="selectedHero-details" title="heroes.component.html (template excerpt)" linenums="false">
 =======
 The template still refers to the old `hero` property.
 Bind to the new `selectedHero` property instead as follows:
+=======
+The template still refers to the old `hero` property. Bind to the new `selectedHero` property instead as follows:
+>>>>>>> formatting changes chp 1-4
 
 <<<<<<< HEAD
 <code-example path="toh-pt2/src/app/app.component.1.html" region="selectedHero-details" title="app.component.html (template excerpt)" linenums="false">
@@ -249,18 +279,22 @@ Bind to the new `selectedHero` property instead as follows:
 ### Hide the empty detail with ngIf
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 When the app loads, `selectedHero` is undefined. The selected hero is initialized when the user clicks a hero's name. Angular can't display properties of the undefined `selectedHero` and throws the following error, visible in the browser's console:
 =======
 When the app loads, `selectedHero` is undefined.
 The selected hero is initialized when the user clicks a hero's name.
 Angular can't display properties of the undefined `selectedHero` and throws the following error, visible in the browser's console:
 >>>>>>> updating first few sections with CLI
+=======
+When the app loads, `selectedHero` is undefined. The selected hero is initialized when the user clicks a hero's name. Angular can't display properties of the undefined `selectedHero` and throws the following error, visible in the browser's console:
+>>>>>>> formatting changes chp 1-4
 
 <code-example format="nocode">
 
   EXCEPTION: TypeError: Cannot read property 'name' of undefined in [null]
-</code-example>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Although `selectedHero.name` is displayed in the template, you must keep the hero detail out of the DOM until there is a selected hero.
 
@@ -270,10 +304,13 @@ Wrap the HTML hero detail content of the template with a `<div>`. Then add the `
 =======
 Although `selectedHero.name` is displayed in the template,
 you must keep the hero detail out of the DOM until there is a selected hero.
+=======
+</code-example>
+>>>>>>> formatting changes chp 1-4
 
-Wrap the HTML hero detail content of the template with a `<div>`.
-Then add the `ngIf` built-in directive and set it to the `selectedHero` property of the component.
+Although `selectedHero.name` is displayed in the template, you must keep the hero detail out of the DOM until there is a selected hero.
 
+Wrap the HTML hero detail content of the template with a `<div>`. Then add the `ngIf` built-in directive and set it to the `selectedHero` property of the component.
 
 <<<<<<< HEAD
 <code-example path="toh-pt2/src/app/app.component.1.html" region="ng-if" title="src/app/app.component.html (ngIf)" linenums="false">
@@ -287,11 +324,15 @@ Then add the `ngIf` built-in directive and set it to the `selectedHero` property
 The app no longer fails and the list of names displays again in the browser.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 When there is no selected hero, the `ngIf` directive removes the hero detail HTML from the DOM. There are no hero detail elements or bindings to worry about.
 =======
 When there is no selected hero, the `ngIf` directive removes the hero detail HTML from the DOM.
 There are no hero detail elements or bindings to worry about.
 >>>>>>> updating first few sections with CLI
+=======
+When there is no selected hero, the `ngIf` directive removes the hero detail HTML from the DOM. There are no hero detail elements or bindings to worry about.
+>>>>>>> formatting changes chp 1-4
 
 When the user picks a hero, `selectedHero` becomes defined and
 `ngIf` puts the hero detail content into the DOM and evaluates the nested bindings.
@@ -307,11 +348,16 @@ To make the selected hero more visible, you'll apply this `selected` class to th
 <figure>
 
   <img src='generated/images/guide/toh/heroes-list-selected.png' alt="Selected hero">
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 </figure>
 
 In the template, add the following `[class.selected]` binding to  the `<li>`:
+=======
+
+</figure>
+>>>>>>> formatting changes chp 1-4
 
 <code-example path="toh-pt2/src/app/heroes/heroes.component.1.html" region="class-selected-1" title="heroes.component.html (setting the CSS class)" linenums="false">
 =======
@@ -350,13 +396,13 @@ Your app should look like this <live-example></live-example>. Here are the code 
 
 =======
 
-
 The final version of the `<li>` looks like this:
 
 <code-example path="toh-pt2/src/app/heroes/heroes.component.1.html" region="class-selected-2" title="heroes.component.html (styling each hero)" linenums="false">
 
 </code-example>
 
+<<<<<<< HEAD
 After clicking "Magneta", the list should look like this:
 
 <figure>
@@ -364,6 +410,9 @@ After clicking "Magneta", the list should look like this:
 </figure>
 
 Here are the code files discussed in this page.
+=======
+Your app should look like this <live-example></live-example>. Here are the code files discussed on this page.
+>>>>>>> formatting changes chp 1-4
 
 <code-tabs>
   <code-pane title="src/app/heroes/heroes.component.ts" path="toh-pt2/src/app/heroes/heroes.component.ts">
@@ -383,8 +432,11 @@ Here are the code files discussed in this page.
 * You added the ability to select a hero and show the hero's details.
 * You learned how to use the built-in directives `ngIf` and `ngFor` in a component's template.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 <font color="red">THE LIVE EXAMPLES NEED TO BE UPDATED</font>
 Your app should look like this <live-example></live-example>.
 >>>>>>> updating first few sections with CLI
+=======
+>>>>>>> formatting changes chp 1-4
