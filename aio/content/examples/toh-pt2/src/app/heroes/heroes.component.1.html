@@ -5,15 +5,12 @@ heroes = HEROES;
 <!-- #docregion heroes-template-1 -->
 <h2>My Heroes</h2>
 <ul class="heroes">
-  <li>
+  <li *ngFor="let hero of heroes">
     <!-- each hero goes here -->
   </li>
 </ul>
 <!-- #enddocregion heroes-template-1 -->
 
-<!-- #docregion heroes-ngfor-1 -->
-<li *ngFor="let hero of heroes">
-<!-- #enddocregion heroes-ngfor-1 -->
 
 <!-- #docregion ng-for -->
 <li *ngFor="let hero of heroes">
