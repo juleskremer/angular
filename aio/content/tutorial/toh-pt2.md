@@ -1,5 +1,5 @@
 @title
-Displaying Hero Information
+Displaying A List of Heroes
 
 @intro
 Build a selectable heroes list.
@@ -31,39 +31,18 @@ Create a public property in `HeroesComponent` that exposes the heroes for bindin
 
 </code-example>
 
-The `heroes` type isn't defined because TypeScript infers it from the `HEROES` array.
-
-### Display hero names in a template
-To display the hero names in an unordered list,
-insert the following chunk of HTML above the hero details.
-
-<code-example path="toh-pt2/src/app/heroes/heroes.component.1.html" region="heroes-template-1" title="heroes.component.html (heroes template)" linenums="false">
-
-</code-example>
-
-Now you can fill the template with hero names.
-
 ### List heroes with ngFor
 
-The goal is to bind the array of heroes in the component to the template, iterate over them, and display them individually.
+Using the built-in directive `*ngFor`, bind to the array of heroes, iterate over them and display them individually.
 
-Modify the `<li>` tag by adding the built-in directive `*ngFor`.
-
-<code-example path="toh-pt2/src/app/heroes/heroes.component.1.html" region="heroes-ngfor-1" title="heroes.component.html (ngFor)">
+<code-example path="toh-pt2/src/app/heroes/heroes.component.1.html" region="heroes-template-1" title="heroes.component.html (heroes template)" linenums="false">
 
 </code-example>
 
 <div class="l-sub-section">
 
 The (`*`) prefix to `ngFor` is a critical part of this syntax.
-It indicates that the `<li>` element and its children
-constitute a structural directive.
-
-The `ngFor` directive iterates over the component's `heroes` array
-and renders an instance of this template for each hero in that array.
-
-The `let hero` part of the expression identifies `hero` as the  template input variable, which holds the current hero item for each iteration.
-You can reference this variable within the template to access the current hero's properties.
+It indicates that `ngFor` is a structural directive. Learn more about `ngFor` at [ngFor Template Syntax](guide/template-syntax.html#!#ngFor)
 
 </div>
 
@@ -96,10 +75,6 @@ The template for displaying heroes should look like this:
 
 
 ## Selecting a hero
-The app now displays a list of heroes as well as a single hero in the details view. But the list and the details view are not connected.
-When users select a hero from the list, the selected hero should appear in the details view.
-This UI pattern is known as "master/detail."
-In this case, the _master_ is the heroes list and the _detail_ is the selected hero.
 
 Next you'll connect the master to the detail through a `selectedHero` component property, which is bound to a click event.
 
@@ -199,12 +174,6 @@ The final version of the `<li>` looks like this:
 <code-example path="toh-pt2/src/app/heroes/heroes.component.1.html" region="class-selected-2" title="heroes.component.html (styling each hero)" linenums="false">
 
 </code-example>
-
-After clicking "Magneta", the list should look like this:
-
-<figure>
-  <img src='generated/images/guide/toh/heroes-list-1.png' alt="Output of heroes list app">
-</figure>
 
 Here are the code files discussed in this page.
 

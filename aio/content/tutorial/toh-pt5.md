@@ -331,6 +331,7 @@ they click a *hero name*, whether the name displays on the dashboard or in the h
 You don't need to add the hero clicks until the `HeroDetailComponent`
 is revised and ready to be navigated to.
 
+<!-- LEFT OFF EDITING HERE; Remove Promises requires code change  -->
 
 
 ## Revise the *HeroDetailComponent*
@@ -370,25 +371,12 @@ into the constructor, saving their values in private fields:
 
 </code-example>
 
-//JULES LEFT OFF HERE
-
 Import the `switchMap` operator to use later with the route parameters `Observable`.
 
 
 <code-example path="toh-pt5/src/app/hero-detail.component.ts" region="rxjs-import" title="src/app/hero-detail.component.ts (switchMap import)">
 
 </code-example>
-
-
-
-Tell the class to implement the `OnInit` interface.
-
-
-<code-example path="toh-pt5/src/app/hero-detail.component.ts" region="implement" title="src/app/hero-detail.component.ts">
-
-</code-example>
-
-
 
 Inside the `ngOnInit()` lifecycle hook, use the `paramMap` Observable to
 extract the `id` parameter value from the `ActivatedRoute` service
@@ -468,7 +456,6 @@ Read more on the [CanDeactivate](api/router/CanDeactivate) page.
 </div>
 
 
-
 You'll wire this method with an event binding to a *Back* button that you'll add to the component template.
 
 
@@ -477,29 +464,14 @@ You'll wire this method with an event binding to a *Back* button that you'll add
 </code-example>
 
 
-
-Migrate the template to its own file
-called <code>hero-detail.component.html</code>:
+<code>hero-detail.component.html</code> should look as follows:
 
 
 <code-example path="toh-pt5/src/app/hero-detail.component.html" title="src/app/hero-detail.component.html">
 
 </code-example>
 
-
-
-Update the component metadata with a `templateUrl` pointing to the template file that you just created.
-
-
-
-<code-example path="toh-pt5/src/app/hero-detail.component.ts" region="metadata" title="src/app/hero-detail.component.ts (metadata)">
-
-</code-example>
-
-
-
 Refresh the browser and see the results.
-
 
 
 ## Select a dashboard hero

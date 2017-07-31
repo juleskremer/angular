@@ -101,7 +101,6 @@ The `HeroService` looks like this:
 
 
 ### Import the hero service
-You're ready to use the `HeroService` in other components, starting with `HeroesComponent`.
 
 Import the `HeroService` so that you can reference it in the code.
 
