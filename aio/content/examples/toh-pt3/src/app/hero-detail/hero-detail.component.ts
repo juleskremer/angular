@@ -1,4 +1,6 @@
+// #docregion import-input
 import { Component, OnInit, Input } from '@angular/core';
+// #enddocregion import-input
 import {Hero} from '../hero';
 
 @Component({
