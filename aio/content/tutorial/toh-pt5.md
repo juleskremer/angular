@@ -372,7 +372,7 @@ Replace the generated text of `dashboard.component.html` with this content:
 ### Get heroes
 
 In `dashboard.component.ts`, add the `Hero` and `HeroService`.
-
+<!-- 
 <code-example path="toh-pt5/src/app/dashboard/dashboard.component.ts" region="imports" title="src/app/dashboard/dashboard.component.ts (imports)">
 =======
 `*ngFor` is used again to iterate over a list of heroes and display their names.
@@ -388,9 +388,13 @@ Angular injects `HeroService` and you can use it in the `DashboardComponent`.
 
 <code-example path="toh-pt5/app/app.module.1.ts" region="imports" title="src/app/app.module.ts (import HeroService)">
 
+<<<<<<< HEAD
 </code-example>
 =======
 >>>>>>> formatting changes chp 1-4
+=======
+</code-example> -->
+>>>>>>> additional changes
 
 ### Get heroes
 
@@ -420,10 +424,10 @@ Similar to the `HeroesComponent`, you will:
 * Call the service to get heroes inside the Angular `ngOnInit()` lifecycle hook.
 
 In this dashboard you specify four heroes (2nd, 3rd, 4th, and 5th) with the `Array.slice` method.
-
+<!-- 
 <code-example path="toh-pt5/src/app/dashboard/dashboard.component.ts" region="class" title="src/app/dashboard/dashboard.component.ts (class)">
 
-</code-example>
+</code-example> -->
 
 Refresh the browser to see four hero names in the new dashboard.
 
@@ -511,7 +515,7 @@ is revised and ready to be navigated to.
 Here's what the `HeroDetailComponent` looks like now:
 
 
-<code-example path="toh-pt4/app/hero-detail.component.1.ts" region="full-file" title="src/app/hero-detail/hero-detail.component.ts (current)">
+<code-example path="toh-pt5/app/hero-detail.component.1.ts" region="full-file" title="src/app/hero-detail/hero-detail.component.ts (current)">
 
 </code-example>
 
@@ -544,7 +548,7 @@ Inject the `ActivatedRoute`, `HeroService`, and `Location` services
 into the constructor, saving their values in private fields:
 
 
-<code-example path="toh-pt5/app/hero-detail.component.ts" region="ctor" title="src/app/hero-detail/hero-detail.component.ts (constructor)">
+<code-example path="toh-pt5/src/app/hero-detail.component.ts" region="ctor" title="src/app/hero-detail/hero-detail.component.ts (constructor)">
 
 </code-example>
 
@@ -759,7 +763,7 @@ the current template exhibits a "master/detail" style with the list of heroes
 at the top and details of the selected hero below.
 
 
-<code-example path="toh-pt4/src/app/app.component.ts" region="template" title="src/app/heroes.component.ts (current template)" linenums="false">
+<code-example path="toh-pt5/src/app/app.component.ts" region="template" title="src/app/heroes.component.ts (current template)" linenums="false">
 
 </code-example>
 
@@ -932,10 +936,7 @@ Instead, edit the CSS in a separate `*.css` file.
 Add a <code>dashboard.component.css</code> file to the `app` folder and reference
 that file in the component metadata's `styleUrls` array property like this:
 
-
-<code-example path="toh-pt5/src/app/dashboard.component.ts" region="css" title="src/app/dashboard.component.ts (styleUrls)">
-
-</code-example>
+**JULES ADD BACK
 
 
 

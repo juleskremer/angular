@@ -1,6 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+// #docregion import-input
+>>>>>>> additional changes
 import { Component, OnInit, Input } from '@angular/core';
+// #enddocregion import-input
 import {Hero} from '../hero';
 
 =======
