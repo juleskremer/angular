@@ -16,6 +16,6 @@ export class HeroesComponent implements OnInit {
 }
 // #enddocregion initial-component
 
-    // #docregion add-hero
+  // #docregion add-hero
   hero = 'Windstorm';
   // #enddocregion add-hero

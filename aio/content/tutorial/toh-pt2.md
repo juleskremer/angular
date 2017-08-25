@@ -6,7 +6,6 @@ Build a selectable heroes list.
 
 @description
 
-
 In this page, you'll expand the Tour of Heroes app to display a list of heroes, and
 allow users to select a hero and display the hero's details.
 
@@ -21,7 +20,6 @@ Create an array of ten heroes.
 <code-example path="toh-pt2/src/app/heroes/heroes.component.ts" region="hero-array" title="src/app/heroes/heroes.component.ts (hero array)">
 
 </code-example>
-
 
 The `HEROES` array is of type `Hero`, the class defined in the previous page. Later in this tutorial, the app will fetch the list of heroes from a web service, but for now you can display mock heroes.
 

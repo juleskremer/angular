@@ -48,7 +48,7 @@ and adding the `HeroesComponent` to the module's `declarations` array as shown h
 </code-example>
 
 
-In general, the `declarations` array contains a list of application components, pipes, and directives that belong to the module. A component must be declared in a module before other components can reference it. This module declares the two application components, `AppComponent` and `HeroesComponent`.
+The `declarations` array contains a list of application components, pipes, and directives that belong to the module. A component must be declared in a module before other components can reference it. This module declares the two application components, `AppComponent` and `HeroesComponent`.
 
 ## Add the _HeroesComponent_ view
 
@@ -116,7 +116,6 @@ Refactor the hero name in the template so it looks like this:
 
 </code-example>
 
-
 `[(ngModel)]` is the Angular syntax to bind the `hero.name` property to the textbox. Data flows _in both directions:_ from the property to the textbox, and from the textbox back to the property.
 
 Notice that immediately after this change, the application breaks. To see the error, look in the browser console, you will see an Angular error message indicating that "`ngModel` ... isn't a known property of `input`."
@@ -158,8 +157,7 @@ Your app should look like this <live-example></live-example>. Here are the code 
 ## Summary
  
 * You learned to declare the required application directives in an Angular module. 
-* You listed the directives in the `NgModule` decorator's `declarations` array.
-* You added a two-way data binding to the `<input>` element
-using the built-in `ngModel` directive. This binding both displays the hero's name and allows users to change it.
+* The Angular CLI listed the directives in the `NgModule` decorator's `declarations` array.
+* You added a two-way data binding to the `<input>` element using the built-in `ngModel` directive. This binding both displays the hero's name and allows users to change it.
 * The `ngModel` directive propagates changes to every other binding of the `hero.name`.
 

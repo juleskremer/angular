@@ -64,9 +64,7 @@ This route definition has the following parts:
 * *Path*: The router matches this route's path to the URL in the browser address bar (`heroes`).
 * *Component*: The component that the router should create when navigating to this route (`HeroesComponent`).
 
-
 <div class="l-sub-section">
-
 
 The `forRoot()` method is called because a configured router is provided at the app's root.
 The `forRoot()` method supplies the Router service providers and directives needed for routing, and performs the initial navigation based on the current browser URL.
@@ -76,9 +74,7 @@ The `forRoot()` method supplies the Router service providers and directives need
 
 ### Router outlet
 
-If you paste the path, `/heroes`, into the browser address bar at the end of the URL,
-the router should match it to the `heroes` route and display the `HeroesComponent`.
-However, you have to tell the router where to display the component. To do this, you can add a `<router-outlet>` element at the end of the template. `RouterOutlet` is one of the directives provided by the `RouterModule`. The router displays each component immediately below the `<router-outlet>` as users navigate through the app.
+If you paste the path, `/heroes`, into the browser address bar at the end of the URL, the router should match it to the `heroes` route and display the `HeroesComponent`. However, you have to tell the router where to display the component. To do this, you can add a `<router-outlet>` element at the end of the template. `RouterOutlet` is one of the directives provided by the `RouterModule`. The router displays each component immediately below the `<router-outlet>` as users navigate through the app.
 
 ### Router links
 
@@ -158,7 +154,7 @@ In your browser, go to the application root (`/`) and reload. The app displays t
 
 To make the dashboard more interesting, you'll display the top four heroes at a glance.
 
-Replace the generated text of `dashboard.component.html` with this content:
+Replace the generated default text of `dashboard.component.html` with this content:
 
 <code-example path="toh-pt5/app/dashboard.component.1.html" title="src/app/dashboard/dashboard.component.html">
 
@@ -168,10 +164,10 @@ Replace the generated text of `dashboard.component.html` with this content:
 ### Get heroes
 
 In `dashboard.component.ts`, add the `Hero` and `HeroService`.
-<!-- 
+
 <code-example path="toh-pt5/src/app/dashboard/dashboard.component.ts" region="imports" title="src/app/dashboard/dashboard.component.ts (imports)">
 
-</code-example> -->
+</code-example>
 
 Similar to the `HeroesComponent`, you will:
 
@@ -180,13 +176,12 @@ Similar to the `HeroesComponent`, you will:
 * Call the service to get heroes inside the Angular `ngOnInit()` lifecycle hook.
 
 In this dashboard you specify four heroes (2nd, 3rd, 4th, and 5th) with the `Array.slice` method.
-<!-- 
+
 <code-example path="toh-pt5/src/app/dashboard/dashboard.component.ts" region="class" title="src/app/dashboard/dashboard.component.ts (class)">
 
-</code-example> -->
+</code-example>
 
 Refresh the browser to see four hero names in the new dashboard.
-
 
 
 ## Navigating to hero details
