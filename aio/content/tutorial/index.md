@@ -1,21 +1,10 @@
 
 # Tutorial: Tour of Heroes
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 The Tour of Heroes app covers the fundamentals of Angular.  In this tutorial you will build an app that helps a staffing agency manage its stable of heroes.
 
 You'll build a basic app that has many of the features you'd expect to find in a data-driven app: acquiring and displaying a list of heroes, editing a selected hero's detail, and navigating among different views of heroic data.
 
-=======
-The plan for this tutorial is to build an app that helps a staffing agency manage its stable of heroes.
-=======
-The Tour of Heroes app covers the fundamentals of Angular.  In this tutorial you will build an app that helps a staffing agency manage its stable of heroes.
->>>>>>> restructure of tutorial for appshell
-
-You'll build a basic app that has many of the features you'd expect to find in a data-driven app: acquiring and displaying a list of heroes, editing a selected hero's detail, and navigating among different views of heroic data.
-
->>>>>>> updating first few sections with CLI
 By the end of the tutorial you will:
 
 * use built-in directives to show and hide elements and display lists of hero data;
@@ -28,15 +17,7 @@ By the end of the tutorial you will:
 * create a shared service to assemble the heroes; and
 * use routing to navigate among different views and their components.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 You'll learn enough Angular to get started and gain confidence that
-=======
-You'll learn enough core Angular to get started and gain confidence that
->>>>>>> updating first few sections with CLI
-=======
-You'll learn enough Angular to get started and gain confidence that
->>>>>>> restructure of tutorial for appshell
 Angular can do whatever you need it to do. 
 
 When you're done with this tutorial, the app will look like this <live-example name="toh-pt6"></live-example>.
@@ -70,8 +51,6 @@ If you click "Heroes," the app displays the "Heroes" master list view.
   <img src='generated/images/guide/toh/heroes-list-2.png' alt="Output of heroes list app">
 </figure>
 
-
-
 When you click a different hero name, the read-only mini detail beneath the list reflects the new choice.
 
 You can click the "View Details" button to drill into the
@@ -79,15 +58,11 @@ editable details of the selected hero.
 
 The following diagram captures all of the navigation options.
 
-
 <figure>
   <img src='generated/images/guide/toh/nav-diagram.png' alt="View navigations">
 </figure>
 
-
-
 Here's the app in action:
-
 
 <figure>
   <img src='generated/images/guide/toh/toh-anim.gif' alt="Tour of Heroes in Action">

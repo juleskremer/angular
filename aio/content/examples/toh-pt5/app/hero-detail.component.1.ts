@@ -28,9 +28,5 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 
-<<<<<<< HEAD
 import { HeroService } from '../hero.service';
-=======
-import { HeroService } from './hero.service';
->>>>>>> updating services section for cli
 // #enddocregion added-imports
