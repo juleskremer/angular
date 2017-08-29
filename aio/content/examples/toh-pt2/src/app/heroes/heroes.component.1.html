@@ -1,17 +1,15 @@
-<!-- #docregion ng-for -->
-<li *ngFor="let hero of heroes">
-  <span class="badge">{{hero.id}}</span> {{hero.name}}
-</li>
-<!-- #enddocregion ng-for -->
+<!-- #docregion hero-array-1 -->
+heroes = HEROES;
+<!-- #enddocregion hero-array-1 -->
 
-<!-- #docregion heroes-styled -->
+<!-- #docregion heroes-template-1 -->
 <h2>My Heroes</h2>
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
-<!-- #enddocregion heroes-styled -->
+<!-- #enddocregion heroes-template-1 -->
 
 <!-- #docregion selectedHero-click -->
 <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
@@ -38,23 +36,6 @@
   </div>
 </div>
 <!-- #enddocregion ng-if -->
-
-<!-- #docregion hero-array-1 -->
-heroes = HEROES;
-<!-- #enddocregion hero-array-1 -->
-
-<!-- #docregion heroes-template-1 -->
-<h2>My Heroes</h2>
-<ul class="heroes">
-  <li>
-    <!-- each hero goes here -->
-  </li>
-</ul>
-<!-- #enddocregion heroes-template-1 -->
-
-<!-- #docregion heroes-ngfor-1 -->
-<li *ngFor="let hero of heroes">
-<!-- #enddocregion heroes-ngfor-1 -->
 
 <!-- #docregion class-selected-1 -->
 [class.selected]="hero === selectedHero"
