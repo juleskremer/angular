@@ -89,7 +89,7 @@ Added hero "Zero" to confirm that the data service can handle a hero with `id==0
 
 In the current `HeroService` implementation, a Promise resolved with mock heroes is returned.
 
-<code-example path="toh-pt4/src/app/hero.service.ts" region="get-heroes" title="src/app/hero.service.ts (old getHeroes)"></code-example>
+**this had a code sample
 
 This was implemented in anticipation of ultimately
 fetching heroes with an HTTP client, which must be an asynchronous operation.

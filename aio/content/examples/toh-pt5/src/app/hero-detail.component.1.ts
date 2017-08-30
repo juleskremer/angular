@@ -8,22 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 
-import { HeroService } from './hero.service';
+import { HeroService } from '../hero.service';
 // #enddocregion added-imports
 
-// Bogus code below this point. It is only here to make lint happy.
-import { Hero } from './hero';
-
-@Component({})
-export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hero;
-  bogus: ParamMap;
-
+  // #docregion ctor
   constructor(
     private heroService: HeroService,
     private route: ActivatedRoute,
     private location: Location
   ) {}
-
-  ngOnInit() {}
-}
+  // #enddocregion ctor
